@@ -1,0 +1,452 @@
+\documentclass[preview]{standalone}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+
+\textheight=24cm % высота текста
+\textwidth=16cm % ширина текста
+\oddsidemargin=0pt % отступ от левого края
+\topmargin=-1.5cm % отступ от верхнего края
+\parindent=24pt % абзацный отступ
+\parskip=5pt % интервал между абзацами
+\tolerance=2000 % терпимость к "жидким" строкам
+\flushbottom % выравнивание высоты страниц
+\usepackage{indentfirst}
+
+\usepackage{arydshln}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{ulem}
+\normalem
+\makeatletter
+\newenvironment{sqcases}{\matrix@check\sqcases\env@sqcases}{\endarray\right.}\def\env@sqcases{\let\@ifnextchar\new@ifnextchar\left\lbrack\def\arraystretch{1.2}\array{@{}l@{\quad}l@{}}}\makeatother
+
+% объявляем новую команду для переноса строки внутри ячейки таблицы
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+	\title{Формулы по математике.}
+	\author{Авторы: Шепрут Илья.}
+	\date{Алматы, 2016}
+
+\begin{document} \fontsize{12pt}{16pt}\selectfont
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+
+\maketitle
+
+\tableofcontents
+
+\thispagestyle{empty}
+
+\newpage
+
+\setcounter{page}{1} % начать нумерацию с номера 1
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+
+\section{Всякое по мелочам}
+
+$ |a| = \left[ \begin{aligned}
+	& a,\text{если\ } a\ge 0 \\
+	& -a,\text{если\ } a < 0
+\end{aligned}\right. $
+
+\begin{center}
+	Уравнение касательной к графику функции $\displaystyle y = f(x) $ в точке $\displaystyle M_0(x_0, f(x_0)) $ имеет вид:
+	$ y = f'(x_0)\, x + (f(x_0) - f'(x_0)\, x_0) $
+\end{center}
+
+$ a^4 + a^2 + 1 = (a^2 - a + 1)\, (a^2 - a + 1) $
+
+$ a^2 + b^2 = (a + b)^2 - 2\, a\, b $
+
+$ (a \pm b)^3 = a^3\pm b^3\pm 3\, a\, b\, (a\pm b) $
+
+$ \sqrt{\mathstrut a\pm \sqrt{\mathstrut b}} = \sqrt{\mathstrut \frac{a + \sqrt{\mathstrut a^2 - b}}{2}}\pm \sqrt{\mathstrut \frac{a - \sqrt{\mathstrut a^2 - b}}{2}} $
+
+\begin{center}
+	Квадратное уравнение:
+	$ a\, x^2 + b\, x + c = 0 \Rightarrow $ $ \left[ \begin{aligned}
+		& a\, (x - x_1)\, (x - x_2) = 0 \\
+		& D = b^2 - 4\, a\, c \\
+		& \left\{ \begin{aligned}
+			& D > 0 \\
+			& x_{1/2} = \frac{-b\pm \sqrt{\mathstrut D}}{2\, a}
+		\end{aligned}\right. \\
+		& \left\{ \begin{aligned}
+			& D = 0 \\
+			& x_{1/2} = \frac{-b}{2\, a}
+		\end{aligned}\right.
+	\end{aligned}\right. $
+\end{center}
+
+%--------------------------------------------------------------------------------%
+
+\section{Свойства степени}
+
+$ a^0 = 1 $
+
+$ a^m = \underbrace{a\, a \, \ldots \, a }_{m сомножителей} $
+
+$ a^{-m} = \frac{1}{a^m} $
+
+$ a^n\, a^m = a^{n+m} $
+
+$ \frac{a^n}{a^m} = a^{n-m} $
+
+$ (a^n)^m = a^{n\, m} $
+
+$ (a\, b)^n = a^n\, a^m $
+
+$ \left(\frac{a}{b} \right)^n = \frac{a^n}{b^n} $
+
+%--------------------------------------------------------------------------------%
+
+\section{Свойства корня}
+
+$ \sqrt[n]{\mathstrut a\, b} = \sqrt[n]{\mathstrut a} \, \sqrt[n]{\mathstrut b} $
+
+$ \sqrt[n]{\mathstrut \frac{a}{b}} = \frac{\sqrt[n]{\mathstrut a}}{\sqrt[n]{\mathstrut b}} $
+
+$ (\sqrt[n]{\mathstrut a})^k = \sqrt[n]{\mathstrut a^k} = a^{\frac{k}{n}} $
+
+$ \sqrt[2n + 1]{\mathstrut -a} = -\sqrt[2n + 1]{\mathstrut a} $
+
+$ \sqrt[n]{\mathstrut \sqrt[k]{\mathstrut a}} = \sqrt[n\, k]{\mathstrut a} $
+
+$ \sqrt[n]{\mathstrut a} = \sqrt[n\, k]{\mathstrut a^k} $
+
+$ \sqrt[2n]{\mathstrut a^{2n}} = |a| $
+
+\section{Свойства логарифма}
+
+\begin{center}
+	если $ a^x = b $, то $ \log_a b = x $.
+\end{center}
+
+$ a^{\log_b c} = c^{\log_b a} $
+
+$ a^{\log_a x} = x $
+
+$ \log_a (x\, y) = \log_a |x| + \log_a |y| $
+
+$ \log_a \frac{x}{y} = \log_a |x| - \log_a |y| $
+
+$ \log_a x^{2\, m} = 2m \log_a |x| $
+
+$ \log_a b = \frac{\log_x b}{\log_x a} $
+
+$ \log_a x = \frac{1}{\log_b a} $
+
+$ \log_{a^k} x^m = \frac{m}{k} \log_a x $
+
+$ \log_a 1 = 0 $
+
+$ \log_a a = 1 $
+
+$ \log_{\phi(x)} f(x) \ge \log_{\phi(x)} g(x) \Rightarrow $ $ \left[
+	\begin{aligned}
+		\left\{ \begin{aligned}
+			& f(x) \ge g(x) \\
+			& g(x) > 0 \\
+			& \phi(x) > 1
+		\end{aligned} \right.
+		\left\{ \begin{aligned}
+			& f(x) \le g(x) \\
+			& f(x) > 0 \\
+			& 0 < \phi(x) < 1
+		\end{aligned} \right.
+	\end{aligned} \right. $
+
+$ \log_{\phi(x)} f(x) > \log_{\phi(x)} g(x) \Rightarrow $ $ \left[
+	\begin{aligned}
+		\left\{ \begin{aligned}
+			& f(x) > g(x) \\
+			& g(x) > 0 \\
+			& \phi(x) > 1
+		\end{aligned} \right.
+		\left\{ \begin{aligned}
+			& f(x) < g(x) \\
+			& f(x) > 0 \\
+			& 0 < \phi(x) < 1
+		\end{aligned} \right.
+	\end{aligned} \right. $
+
+%--------------------------------------------------------------------------------%
+
+\section{Тригонометрия}
+
+\subsection{Основное}
+
+$ \sin^2 \alpha + \cos^2 \alpha = 1 $
+
+$ \tg^2 \alpha + 1 = \frac{1}{\cos^2 \alpha} $
+
+$ \ctg^2 \alpha + 1 = \frac{1}{\sin^2 \alpha} $
+
+$ \tg \alpha\, \ctg \alpha = 1 $
+
+$ \tg \alpha = \frac{\sin \alpha}{\cos \alpha} $
+
+\subsection{Суммы углов}
+
+$ \sin(\alpha\pm \beta) = \sin \alpha\, \cos \beta \pm \cos \alpha\, \sin \beta $
+
+$ \cos(\alpha\pm \beta) = \cos \alpha\, \cos \beta \mp \sin \alpha\, \sin \beta $
+
+$ \tg (\alpha \pm \beta) = \frac{\tg \alpha \pm \tg \beta}{1 \mp \tg \alpha \, \tg \beta} $
+
+\subsection{Двойные и тройные углы}
+
+$ \sin 2\, \alpha = 2\, \sin \alpha\, \cos \alpha $
+
+$ \cos 2\, \alpha = \cos^2 \alpha - \sin^2 \alpha = $ $ 2\, \cos^2 \alpha - 1 = 1 - 2\, \sin^2 \alpha $
+
+$ \tg 2\alpha = \frac{2\, \tg \alpha}{1 - \tg^2 \alpha} = \frac{2}{\ctg \alpha - \tg \alpha} $
+
+$ \cos 3\, \alpha = 4\, \cos^3 \alpha - 3\, \cos \alpha $
+
+$ \sin 3\, \alpha = 3\, \sin \alpha - 4\, \sin^3 \alpha $
+
+$ \tg 3\, \alpha = \frac{3\, \tg \alpha - \tg^3 \alpha}{1 - 3\, \tg^2 \alpha} $
+
+\subsection{Сумма функций}
+
+$ \sin \alpha \pm \sin \beta = 2\, \sin \frac{\alpha \pm \beta}{2}\, \cos \frac{\alpha \mp \beta}{2} $
+
+$ \cos \alpha \pm \cos \beta = 2\, \cos \frac{\alpha \pm \beta}{2}\, \cos \frac{\alpha \mp \beta}{2} $
+
+$ a\, \sin \alpha + b\, \cos \alpha = \sqrt{\mathstrut a^2 + b^2}\, \sin \left(\alpha + \arcsin \frac{a}{\sqrt{\mathstrut a^2 + b^2}}\right) $
+
+$ \tg \alpha \pm \tg \beta = \frac{\sin (\alpha \pm \beta)}{\cos \alpha\, \cos \beta} $
+
+$ \ctg \alpha \pm \ctg \beta = \frac{\pm\sin (\alpha \pm \beta)}{\sin \alpha\, \sin \beta} $
+
+$ \ctg \alpha \pm \tg \beta = \frac{\cos (\alpha \mp \beta)}{\sin \alpha\, \cos \beta} $
+
+\subsection{Произведение функций}
+
+$ \sin \alpha\, \cos \beta = \frac{1}{2}\, (\sin (\alpha - \beta) + \sin (\alpha + \beta)) $
+
+$ \sin \alpha\, \sin \beta = \frac{1}{2}\, (\cos (\alpha - \beta) - \cos (\alpha + \beta)) $
+
+$ \cos \alpha\, \cos \beta = \frac{1}{2}\, (\cos (\alpha - \beta) + \cos (\alpha + \beta)) $
+
+\subsection{Понижение степени и половинный угол}
+
+$ \cos^2 \alpha = \frac{1 + \cos 2\, \alpha}{2} $
+
+$ \sin^2 \alpha = \frac{1 - \cos 2\, \alpha}{2} $
+
+$ \sin^3 \alpha = \frac14(3\sin \alpha - \sin 3 \alpha) $
+
+$ \cos^3 \alpha = \frac14(3\cos \alpha + \cos 3 \alpha) $
+
+$ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \alpha}} = \frac{\sin \alpha}{1 + \cos \alpha} $
+
+\subsection{Универсальная тригонометрическая подстановка}
+
+{\renewcommand{\arraystretch}{2}
+\begin{tabular}[t]{||c|c||}
+	\hline
+		$ \tg \cfrac{\alpha}{2} = t $ & 		$ \sin \alpha = \cfrac{2t}{1 + t^2} $ \tabularnewline
+	\hline
+		$ \alpha = 2\arctg t $ & 		$ \cos \alpha = \cfrac{1 - t^2}{1 + t^2} $ \tabularnewline
+	\hline
+		$ d\alpha = \cfrac{2dt}{1+t^2}$ & 	$ \tg \alpha = \cfrac{2t}{1-t^2} $ \tabularnewline
+	\hline
+\end{tabular}}
+
+\subsection{Таблица с суммой углов}
+
+\begin{tabular}[t]{||c|c|c|c|c|c|c|c|c||}
+	\hline
+		$ \alpha $ &
+			\specialcell{$ \frac{\pi}{2} - \alpha $ \\ $ 90^{\circ} - \alpha $} &
+			\specialcell{$ \frac{\pi}{2} + \alpha $ \\ $ 90^{\circ} + \alpha $} &
+			\specialcell{$ \pi - \alpha $ \\ $ 180^{\circ} - \alpha $} &
+			\specialcell{$ \pi + \alpha $ \\ $ 180^{\circ} + \alpha $} &
+			\specialcell{$ \frac{3\, \pi}{2} - \alpha $ \\ $ 270^{\circ} - \alpha $} &
+			\specialcell{$ \frac{3\, \pi}{2} + \alpha $ \\ $ 270^{\circ} + \alpha $} &
+			\specialcell{$ 2\, \pi - \alpha $ \\ $ 360^{\circ} - \alpha $} &
+			\specialcell{$ 2\, \pi + \alpha $ \\ $ 360^{\circ} + \alpha $} \tabularnewline
+	\hline
+		$ \sin \alpha $ & 	$ \cos \alpha $ & 	$ \cos \alpha $ & 	$ \sin \alpha $ & 	$ -\sin \alpha $ & 	$ -\cos \alpha $ & 	$ -\cos \alpha $ & 	$ -\sin \alpha $ & 	$ \sin \alpha $ \tabularnewline
+	\hline
+		$ \cos \alpha $ & 	$ \sin \alpha $ & 	$ -\sin \alpha $ & 	$ -\cos \alpha $ & 	$ -\cos \alpha $ & 	$ -\sin \alpha $ & 	$ \sin \alpha $ & 	$ \cos \alpha $ & 	$ \cos \alpha $ \tabularnewline
+	\hline
+		$ \tg \alpha $ & 	$ \ctg \alpha $ & 	$ -\ctg \alpha $ & 	$ -\tg \alpha $ & 	$ \tg \alpha $ & 	$ \ctg \alpha $ & 	$ -\ctg \alpha $ & 	$ -\tg \alpha $ & 	$ \tg \alpha $ \tabularnewline
+	\hline
+		$ \ctg \alpha $ & 	$ \tg \alpha $ & 	$ -\tg \alpha $ & 	$ -\ctg \alpha $ & 	$ \ctg \alpha $ & 	$ \tg \alpha $ & 	$ -\tg \alpha $ & 	$ -\ctg \alpha $ & 	$ \ctg \alpha $ \tabularnewline
+	\hline
+\end{tabular}
+
+\subsection{Тригонометрические уравнения}
+
+\begin{tabular}[t]{||c|c|c||}
+	\hline
+		Уравнение & Решение & Условие \tabularnewline
+	\hline
+		$ \sin x = a $ & 	$ x = (-1)^k\, \arcsin a + \pi\, k $ & 	$ |a| \le 1 $ \tabularnewline
+	\hline
+		$ \cos x = a $ & 	$ x = \pm \arccos a + 2\, \pi\, k $ & 	$ |a| \le 1 $ \tabularnewline
+	\hline
+		$ \tg x = a $ & 	$ x = \arctg a + \pi\, k $ & 	$ - $ \tabularnewline
+	\hline
+		$ \ctg x = a $ & 	$ x = \arcctg a + \pi\, k $ & 	$ - $ \tabularnewline
+	\hline
+\end{tabular}
+
+Частные случаи:
+
+\begin{tabular}[t]{||c|c||c|c||}
+	\hline
+		Уравнение & Решение & Уравнение & Решение \tabularnewline
+	\hline
+		$ \sin x = 0 $ & 	$ x = \pi\, k $ & 				$ \cos x = 0 $ &	$ x = \frac{\pi}{2} + \pi\, k $ \tabularnewline
+	\hline
+		$ \sin x = 1 $ & 	$ x = \frac{\pi}{2} + 2\, \pi\, k $ & 	$ \cos x = 1 $ & 	$ x = 2\, \pi\, k $ \tabularnewline
+	\hline
+		$ \sin x = -1 $ & 	$ x = -\frac{\pi}{2} + 2\, \pi\, k $ & 	$ \cos x = -1 $ & 	$ x = \pi + 2\, \pi\, k $ \tabularnewline
+	\hline
+		$ \tg x = 0 $ & 	$ x = \pi\, k $ & 				$ \ctg x = 0 $ & 	$ x = \frac{\pi}{2} + \pi\, k $ \tabularnewline
+	\hline
+		$ \tg x = 1 $ & 	$ x = \frac{\pi}{4} + \pi\, k $ & 		$ \ctg x = 1 $ & 	$ x = \frac{\pi}{4} + \pi\, k $ \tabularnewline
+	\hline
+		$ \tg x = -1 $ & 	$ x = -\frac{\pi}{4} + \pi\, k $ & 		$ \ctg x = -1 $ & 	$ x = \frac{3\, \pi}{4} + \pi\, k $ \tabularnewline
+	\hline
+\end{tabular}
+
+\subsection{Обратные тригонометрические функции:}
+
+{\renewcommand{\arraystretch}{1}
+\begin{tabular}[t]{||c||c||c||}
+	\hline
+		$ \sin\arcsin x = x $            & $ \sin\arccos x = \sqrt{1-x^2} $          & $ \arcsin(-x) = -\arcsin x $              \tabularnewline
+	\hline
+		$ \arcsin\sin\alpha = \alpha $   & $ \cos\arcsin x = \sqrt{1-x^2} $            & $ \arccos(-x) = \pi - \arccos x $         \tabularnewline
+	\hline
+	\hline
+		$ \cos\arccos x = x $            & $ \sin\arctg x = \cfrac{x}{\sqrt{1+x^2}} $ & $ \arctg(-x) = -\arctg x $                \tabularnewline
+	\hline
+		$ \arccos\cos\alpha = \alpha $   & $ \cos\arctg x = \cfrac{1}{\sqrt{1+x^2}} $ & $ \arcctg(-x) = \pi - \arcctg x $         \tabularnewline
+	\hline
+	\hline
+		$ \tg\arctg x = x $              & $ \tg\arcsin x = \cfrac{x}{\sqrt{1-x^2}} $ & $ \arcsin x + \arccos x = \cfrac{\pi}{2} $ \tabularnewline
+	\hline
+		$ \arctg\tg\alpha = \alpha $     & $ \tg\arccos x = \cfrac{\sqrt{1-x^2}}{x} $ & $ \arctg x + \arcctg x = \cfrac{\pi}{2} $  \tabularnewline
+	\hline
+\end{tabular}}
+
+\subsection{Сумма обратных тригонометрических функций}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}[t]{||c||}
+	\hline
+		$ \arcsin x - \arcsin y =  \arcsin x + \arcsin(-y) $ \\
+		$ \Sigma_{\sin{}} = \arcsin\left(x\sqrt{\mathstrut 1-y^2}+y\sqrt{\mathstrut 1-x^2}\right) $ \\
+	\hline
+		$ \boxed{\arcsin x + \arcsin y =} $ \\
+		$ \left\{ \begin{aligned}
+			\Sigma_{\sin{}}, \quad & xy \leqslant 0,\quad & x^2 + y^2 \leqslant 1 \\
+			\pi-\Sigma_{\sin{}}, \quad & x > 0, y > 0,\quad  & x^2 + y^2 > 1 \\
+			-\pi-\Sigma_{\sin{}}, \quad & x < 0, y < 0,\quad & x^2 + y^2 > 1 \\
+		\end{aligned} \right. $ \\
+	\hline
+	\hline
+		$ \arccos x - \arccos y =  -\pi + \arccos x + \arccos(-y) $ \\
+		$ \Sigma_{\cos{}} = \arccos\left(xy+\sqrt{\mathstrut 1-x^2}\sqrt{\mathstrut 1-y^2}\right) $ \\
+	\hline
+		$ \boxed{\arccos x + \arccos y =} $
+		$ \left\{ \begin{aligned}
+			\Sigma_{\cos{}}, \quad & x \geqslant -y \\
+			2\pi-\Sigma_{\cos{}}, \quad & x < -y
+		\end{aligned} \right. $ \\
+	\hline
+	\hline
+		$ \arctg x - \arctg y =  \arctg x + \arctg(-y) $ \\
+		$ \Sigma_{\tg{}} = \arctg\cfrac{x+y}{1-xy} $ \\
+	\hline
+		$ \boxed{\arctg x + \arctg y =} $
+		$ \left\{ \begin{aligned}
+			\Sigma_{\tg{}}, \quad & & xy < 1 \\
+			\pi+\Sigma_{\tg{}}, \quad & x > 0, \quad & xy>1 \\
+			-\pi+\Sigma_{\tg{}}, \quad & x < 0, \quad & xy>1 \\
+		\end{aligned} \right. $ \\
+	\hline
+\end{tabular}}
+
+\section{Гиперболические функции}
+
+\subsection{Основные}
+
+$$ \ch^2 x - \sh^2 x = 1 $$
+
+$$ \ctg^2 x - 1 = \frac{1}{\sh^2 x} $$
+
+$$ 1 - \th^2 x = \frac{1}{\ch^2 x} $$
+
+$$ \th x \, \cth x = 1 $$
+
+$$ \th x = \frac{\sh x}{\ch x} $$
+
+\subsection{Суммы углов}
+
+$$ \sh(x \pm y) = \sh x \, \ch y \pm \sh y \, \ch x $$
+
+$$ \ch(x \pm y) = \ch x \, \ch y \pm \sh y \, \sh x $$
+
+$$ \th(x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \, \th y} $$
+
+\subsection{Двойные и тройные углы}
+
+$$ \sh 2x = 2\sh x \, \ch x $$
+
+$$ \ch 2x = \ch^2 x + \sh^2 x = 2\ch^2 x - 1 = 1 + 2\sh^2 x $$
+
+$$ \th 2x = \frac{2\th x}{1 + \th^2 x} = \frac{2}{\th x + \cth x} $$
+
+$$ \sh 3x = 4\sh^3 x + 3\sh x $$
+
+$$ \ch 3x = 4\ch^3 x - 3\ch x $$
+
+$$ \th 3x = \th x \cdot \frac{3+\th^2 x}{1 + 3\th^2 x} $$
+
+\subsection{Сумма функций}
+
+$$ \sh x \pm \sh y = 2\sh\frac{x\pm y}{2}\,\ch\frac{x\mp y}{2} $$
+
+$$ \ch x + \ch y = 2\ch\frac{x+y}{2}\,\ch\frac{x-y}{2} $$
+
+$$ \ch x - \ch y = 2\sh\frac{x+ y}{2}\,\sh\frac{x- y}{2} $$
+
+$$ \th x \pm \th y = 2\frac{\sh(x\pm y)}{\ch x\, \ch y} $$
+
+\subsection{Произведение функций}
+
+$$ \sh x \, \sh y = \frac12(\ch(x+y)-\ch(x-y)) $$
+
+$$ \sh x \, \ch y = \frac12(\sh(x+y)+\sh(x-y)) $$
+
+$$ \ch x \, \ch y = \frac12(\ch(x+y)+\ch(x-y)) $$
+
+\subsection{Понижение степени и половинный угол}
+
+$$ \ch^2 x = \frac{\ch 2x+1}{2} $$
+
+$$ \th^2 x = \frac{\ch 2x-1}{2} $$ 
+
+\subsection{Универсальная гиперболическая подстановка}
+
+
+
+\subsection{Обратные гиперболические функции}
+
+\subsection{Сумма обратных гиперболических функций}
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+\end{document}
