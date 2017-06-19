@@ -1,15 +1,15 @@
-\documentclass[preview]{standalone}
-\usepackage[cp1251]{inputenc}
+п»ї\documentclass[preview]{standalone}
+\usepackage[utf8]{inputenc} 
 \usepackage[russian]{babel}
 
-\textheight=24cm % высота текста
-\textwidth=16cm % ширина текста
-\oddsidemargin=0pt % отступ от левого края
-\topmargin=-1.5cm % отступ от верхнего края
-\parindent=24pt % абзацный отступ
-\parskip=5pt % интервал между абзацами
-\tolerance=2000 % терпимость к "жидким" строкам
-\flushbottom % выравнивание высоты страниц
+\textheight=24cm % РІС‹СЃРѕС‚Р° С‚РµРєСЃС‚Р°
+\textwidth=16cm % С€РёСЂРёРЅР° С‚РµРєСЃС‚Р°
+\oddsidemargin=0pt % РѕС‚СЃС‚СѓРї РѕС‚ Р»РµРІРѕРіРѕ РєСЂР°СЏ
+\topmargin=-1.5cm % РѕС‚СЃС‚СѓРї РѕС‚ РІРµСЂС…РЅРµРіРѕ РєСЂР°СЏ
+\parindent=24pt % Р°Р±Р·Р°С†РЅС‹Р№ РѕС‚СЃС‚СѓРї
+\parskip=5pt % РёРЅС‚РµСЂРІР°Р» РјРµР¶РґСѓ Р°Р±Р·Р°С†Р°РјРё
+\tolerance=2000 % С‚РµСЂРїРёРјРѕСЃС‚СЊ Рє "Р¶РёРґРєРёРј" СЃС‚СЂРѕРєР°Рј
+\flushbottom % РІС‹СЂР°РІРЅРёРІР°РЅРёРµ РІС‹СЃРѕС‚С‹ СЃС‚СЂР°РЅРёС†
 \usepackage{indentfirst}
 
 \usepackage{arydshln}
@@ -23,7 +23,7 @@
 \makeatletter
 \newenvironment{sqcases}{\matrix@check\sqcases\env@sqcases}{\endarray\right.}\def\env@sqcases{\let\@ifnextchar\new@ifnextchar\left\lbrack\def\arraystretch{1.2}\array{@{}l@{\quad}l@{}}}\makeatother
 
-% объявляем новую команду для переноса строки внутри ячейки таблицы
+% РѕР±СЉСЏРІР»СЏРµРј РЅРѕРІСѓСЋ РєРѕРјР°РЅРґСѓ РґР»СЏ РїРµСЂРµРЅРѕСЃР° СЃС‚СЂРѕРєРё РІРЅСѓС‚СЂРё СЏС‡РµР№РєРё С‚Р°Р±Р»РёС†С‹
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 	\title{Math formulae.}
@@ -45,7 +45,7 @@
 %--------------------------------------------------------------------------------%
 %--------------------------------------------------------------------------------%
 
-\input{formulae.tex}
+\input{formulae}
 
 %--------------------------------------------------------------------------------%
 %--------------------------------------------------------------------------------%
