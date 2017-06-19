@@ -1,0 +1,52 @@
+\documentclass[preview]{standalone}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+
+\textheight=24cm % высота текста
+\textwidth=16cm % ширина текста
+\oddsidemargin=0pt % отступ от левого кра€
+\topmargin=-1.5cm % отступ от верхнего кра€
+\parindent=24pt % абзацный отступ
+\parskip=5pt % интервал между абзацами
+\tolerance=2000 % терпимость к "жидким" строкам
+\flushbottom % выравнивание высоты страниц
+\usepackage{indentfirst}
+
+\usepackage{arydshln}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{ulem}
+\normalem
+\makeatletter
+\newenvironment{sqcases}{\matrix@check\sqcases\env@sqcases}{\endarray\right.}\def\env@sqcases{\let\@ifnextchar\new@ifnextchar\left\lbrack\def\arraystretch{1.2}\array{@{}l@{\quad}l@{}}}\makeatother
+
+% объ€вл€ем новую команду дл€ переноса строки внутри €чейки таблицы
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+	\title{Math formulae.}
+
+\begin{document} \fontsize{12pt}{16pt}\selectfont
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+
+\maketitle
+
+\tableofcontents
+
+\thispagestyle{empty}
+
+\newpage
+
+\setcounter{page}{1}
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+
+\input{formulae.tex}
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+\end{document}
