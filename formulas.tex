@@ -450,13 +450,115 @@ $$ \th^2 x = \frac{\ch 2x-1}{2} $$
 
 \section{Линейная алгебра}
 
-\subsection{Переход к новому базису}
+\section{Матрицы}
+
+\subsection{Вектора линейного пространства}
+
+Обозначение базиса: $\mathbb{e} = (\boldsymbol{e_1}, \boldsymbol{e_2}, \dots, \boldsymbol{e_n})$.
+
+Обозначение координатного столбца вектора в базисе $\mathbb{e}$: $[x]_\mathbb{e} = 
+\begin{pmatrix}
+	x_1\\
+	x_2\\
+	\dots\\
+	x_n
+\end{pmatrix} $  
+
+Любой вектор можно выразить через базис и координатный столбец: 
+$$
+	\boldsymbol{x} = \mathbb{e}\cdot [x]_\mathbb{e} = (\boldsymbol{e_1}, \boldsymbol{e_2}, \dots, \boldsymbol{e_n}) \cdot 
+	\begin{pmatrix}
+		x_1\\
+		x_2\\
+		\dots\\
+		x_n
+	\end{pmatrix} = x_1\boldsymbol{e_1} + x_2\boldsymbol{e_2} + \dots + x_n\boldsymbol{e_n}; 
+$$
+
+Линейные операции над вектором равносильны линейным операциям над его координатным столбцом:
+
+$$ [c\cdot \boldsymbol{x}]_\mathbb{e} = c\cdot [\boldsymbol{x}]_\mathbb{e} $$
+$$ [\boldsymbol{x} + \boldsymbol{y}]_\mathbb{e} = [\boldsymbol{x}]_\mathbb{e} + [\boldsymbol{y}]_\mathbb{e} $$
+
+\section{Получение матрицы перехода к новому базису}
+
+Если вектора базиса $\mathbb{a}$ заданы через вектора $\mathbb{e}$, т.е.
+
+\begin{equation*} 
+	\begin{cases}
+		\boldsymbol{a_1} = \alpha_{1,1}\boldsymbol{e_1} + \alpha_{1,2}\boldsymbol{e_2} + \dots + \alpha_{1,n}\boldsymbol{e_n} = \mathbb{e} \cdot [a_1]_\mathbb{e} \\
+		\boldsymbol{a_2} = \alpha_{2,1}\boldsymbol{e_1} + \alpha_{2,2}\boldsymbol{e_2} + \dots + \alpha_{2,n}\boldsymbol{e_n} = \mathbb{e} \cdot [a_2]_\mathbb{e} \\
+		\dots \\
+		\boldsymbol{a_n} = \alpha_{n,1}\boldsymbol{e_1} + \alpha_{n,2}\boldsymbol{e_2} + \dots + \alpha_{n,n}\boldsymbol{e_n} = \mathbb{e} \cdot [a_n]_\mathbb{e}
+	\end{cases}
+	\Leftrightarrow
+	\begin{matrix}
+		P_\mathbb{ea}^T \cdot \mathbb{e}^T& =& \mathbb{a}^T \\
+		\mathbb{e} \cdot P_\mathbb{ea}& =& \mathbb{a}\\
+		\mathbb{a} \cdot P_\mathbb{ea}^{-1}& =& \mathbb{e}\\
+		\mathbb{a} \cdot P_\mathbb{ae}& =& \mathbb{e}\\
+	\end{matrix}
+\end{equation*} 
+
+То матрица перехода $P_\mathbb{ea}$ будет равна:
+
+\[
+P_\mathbb{ea} = 
+\left([a_1]_\mathbb{e}, [a_2]_\mathbb{e}, \dots, [a_n]_\mathbb{e}\right) = 
+\begin{pmatrix}
+	\alpha_{1,1}& \alpha_{2, 1}& \dots& \alpha_{n,1}\\
+	\alpha_{1,2}& \alpha_{2, 2}& \dots& \alpha_{n,2}\\
+	\dots& \dots& \dots& \dots\\
+	\alpha_{1,n}& \alpha_{2, n}& \dots& \alpha_{n,n}
+\end{pmatrix}
+\]
+
+\section{Формулы перехода к новому базису}
+
+$$ P_\mathbb{ea} = P_\mathbb{ae}^{-1} $$
+$$ \mathbb{a} = \mathbb{e} \cdot P_\mathbb{ea} $$
+$$ P_\mathbb{ad} = P_\mathbb{ae}\cdot P_\mathbb{ed} $$
+$$ [x]_\mathbb{a} = P_\mathbb{ea} \cdot [x]_\mathbb{e} $$
+
+\section{Линейный оператор}
+
+$A$ - линейный оператор.
+
+$A_\mathbb{e}$ - матрица $A$ в базисе $\mathbb{e}$.
+
+$c$ - некоторое число.
+ 
+$$ A(\boldsymbol{x}) = y $$
+$$ A(\boldsymbol{x_1} + \boldsymbol{x_2}) = A(\boldsymbol{x_1}) + A(\boldsymbol{x_2}) $$
+$$ A(c\cdot\boldsymbol{x}) = c\cdot A(\boldsymbol{x}) $$
+$$ [y]_\mathbb{e} = A_\mathbb{e} \cdot [x]_\mathbb{e} $$
+$$ A_\mathbb{a} = P_\mathbb{ea}^{-1} \cdot A_\mathbb{e} \cdot P_\mathbb{ea} $$
+
+\section{Билинейная форма}
+
+$B$ - билинейная форма.
+
+$B_\mathbb{e}$ - матрица $B$ в базисе $\mathbb{e}$.
+
+$c$, $\lambda$ - некоторые числа.
+
+$$ B(\boldsymbol{x}, \boldsymbol{y}) = c$$
+$$ B(\boldsymbol{x_1} + \boldsymbol{x_2}, \boldsymbol{y}) = B(\boldsymbol{x_1}, \boldsymbol{y}) + B(\boldsymbol{x_2}, \boldsymbol{y}) $$
+$$ B(\boldsymbol{x}, \boldsymbol{y_1} + \boldsymbol{y_2}) = B(\boldsymbol{x}, \boldsymbol{y_1}) + B(\boldsymbol{x}, \boldsymbol{y_2}) $$
+$$ B(\lambda\cdot \boldsymbol{x}, \boldsymbol{y}) =  \lambda\cdot B(\boldsymbol{x}, \boldsymbol{y})$$
+$$ B(\boldsymbol{x}, \lambda\cdot \boldsymbol{y}) =  \lambda\cdot B(\boldsymbol{x}, \boldsymbol{y})$$
+$$ B(x, y) = B(y, x) \Leftrightarrow B_\mathbb{e} = B_\mathbb{e}^T $$
+$$ c = [x]_\mathbb{e}^T \cdot B_\mathbb{e} \cdot [y]_\mathbb{e} $$
+$$ B_\mathbb{a} = P_\mathbb{??}^T \cdot B_\mathbb{e} \cdot P_\mathbb{??} $$
+$$ B_\mathbb{e} = \left\lceil B(\boldsymbol{e_i},\boldsymbol{e_j})\right\rfloor_{i,j=\overline{1,n}} $$
 
 \subsection{Евклидовы пространства}
 
 \subsection{Уравнения прямых/плоскостей}
 
 \subsection{Кривые второго порядка}
+
+\subsection{Жорданова форма и функции от матриц}
 
 %--------------------------------------------------------------------------------%
 
