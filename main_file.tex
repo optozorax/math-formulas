@@ -20,6 +20,20 @@
 \usepackage{mathtools}
 \usepackage{color}
 \usepackage{ulem}
+
+\usepackage[outline]{contour}
+\contourlength{1.2pt}
+
+\usepackage{tikz}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usetikzlibrary{calc}
+\usetikzlibrary{through}
+\usetikzlibrary{intersections}
+\usetikzlibrary{patterns}
+\usetikzlibrary{scopes}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{arrows.meta}
 \normalem
 \makeatletter
 \newenvironment{sqcases}{\matrix@check\sqcases\env@sqcases}{\endarray\right.}\def\env@sqcases{\let\@ifnextchar\new@ifnextchar\left\lbrack\def\arraystretch{1.2}\array{@{}l@{\quad}l@{}}}\makeatother
@@ -35,7 +49,7 @@
 
 \maketitle
 
-\tableofcontents
+%\tableofcontents
 
 \thispagestyle{empty}
 

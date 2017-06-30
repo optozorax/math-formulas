@@ -132,19 +132,237 @@ $ \log_{\phi(x)} f(x) > \log_{\phi(x)} g(x) \Rightarrow $ $ \left[
 	
 \section{Комбинаторика}
 
+$ P_n $ --- количество всех перестановок множества размером $ n $. Пример: все перестановки множества $abc$: $abc$, $acb$, $bac$, $bca$, $cab$, $cba$.
+
+$ A^m_n $ --- количество размещений множества размером $ n $ по $ m $ элементов. Пример: все размещения множества $ \{1, 2, 3, 4, 5, 6 \} $ по два элемента: $ \{1, 2\} $, $ \{1, 3\} $, $ \{1, 4\} $, $ \{1, 5\} $, \dots, $ \{2, 1\} $, $ \{2, 3\} $,  \dots, $ \{5, 6\} $. При этом повторения вроде $ \{2, 2\} $ недопустимы. И размещения $ \{2, 1 \} $ и $ \{ 1, 2 \} $ считаются различными.
+
+$ \widetilde{A}^m_n $ --- количество размещений множества размером $ n $ по $ m $ элементов с повторениями элементов в одном размещении. Т.е. повторения вроде $ \{2, 2\} $ допустимы.
+
+$ C^m_n $ --- количество сочетаний множества размером $n$ по $m$ элементов. Сочетание --- размещение, в котором наборы вида $ \{2, 1 \} $ и $ \{ 1, 2 \} $ считаются одинаковыми.
+
+$ \widetilde{C}^m_n $ --- количество сочетаний множества размером $n$ по $m$ элементов с повторениями. Т.е. повторения вроде $ \{2, 2\} $ допустимы.
+
+$ A^m_n = \frac{n!}{(n-m)!} $
+
+$ \widetilde{A}^m_n = n^m $
+
+$ P_n = n! $
+
+$ C^m_n = \frac{A^m_n}{P_m} = \frac{n!}{(n-m)!m!} $
+
+$ C^m_n + C^{m+1}_n = C^{m+1}_{n+1} $
+
+$ C^0_n + C^1_n + \dots + C^n_n = 2^n $
+
+$ C^m_n = C^{n-m}_n $
+
+$ \widetilde{C}^m_n = C^m_{n+m-1} = C^{n-1}_{n+m-1} = \frac{(n+m-1)!}{m!(n-1)!} $
+
+$ T_{k+1} = C^k_n\cdot a^{n-k}b^k $
+
+$ (a+b)^n = C^0_n\cdot a^n + C^1_n\cdot a^{n-1}b + \dots + C^n_n\cdot b^n $
+
 %--------------------------------------------------------------------------------%
 	
 \section{Прогрессии}
 
 \subsection{Арифметическая}
 
+$ a_{n+1} = a_n + d $
+
+$ a_n = a_1 + (n-1)\cdot d $
+
+$ d = \frac{a_n-a_m}{n-m}, n \neq m $
+
+$ a_n = \frac{a_{n+1} + a_{n-1}}{2} $
+
+$ S_n = \frac{a_1 + a_n}{2}\cdot n $
+
+$ S_n = \frac{2\cdot a_1 + (n-1)\cdot d}{2}\cdot n $
+
 \subsection{Геометрическая}
+
+$ b_n = b_{n-1}\cdot q $
+
+$ b_n = b_1 \cdot q^{n-1} $
+
+$ q^{n-m} = \frac{b_n}{b_m} $
+
+$ b_n = \sqrt{b_{n+1}\cdot b_{n-1}}, b_n \neq 0 $
+
+$ S_n = \frac{b_1 - b_n\cdot q}{1-q} $
+
+$ S_n = \frac{b_1\cdot (1 - q^n}{1-q} $
+
+$ S_\infty = \frac{b_1}{1-q}, \left|q\right| < 1 $
 
 %--------------------------------------------------------------------------------%
 
 \section{Тригонометрия}
 
 \subsection{Графики}
+
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-0.5,-1) grid ++(5, 2);
+
+	% Graphs
+	\draw[domain=-0.5:4.5,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{cos(deg(\x/4*2*pi))});
+
+	% Axes
+	\draw[->, thick] (-0.7, 0) -- (4.7, 0);
+	\draw[->, thick] (0, -1.2) -- (0, 1.2);
+
+	\draw[-, dashed] (2, 0) -- (2, -1);
+	\draw[-, dashed] (4, 0) -- (4, 1);
+
+	% Nodes
+	\draw (4.9,0) node {$x$};
+	\draw (0, 1.4) node {$y$};
+
+	\draw (-0.3, -0.2) node {\contour{white}{$0$}};
+	\draw (-0.3, 1) node {\contour{white}{$1$}};
+
+	\draw (1, -0.3) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (2, -0.3) node {\contour{white}{$\pi$}};
+	\draw (3, -0.3) node {\contour{white}{$\frac{3\pi}{2}$}};
+	\draw (4, -0.3) node {\contour{white}{$2\pi$}};
+
+	\draw (2, 0.5) node[scale=1.3] {\contour{white}{$y=\cos x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (0, 1) circle (1.5pt);
+	\fill [black] (1, 0) circle (1.5pt);
+	\fill [black] (2, 0) circle (1.5pt);
+	\fill [black] (3, 0) circle (1.5pt);
+	\fill [black] (4, 0) circle (1.5pt);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-0.5,-1) grid ++(5, 2);
+
+	% Graphs
+	\draw[domain=-0.5:4.5,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{sin(deg(\x/4*2*pi))});
+
+	% Axes
+	\draw[->, thick] (-0.7, 0) -- (4.7, 0);
+	\draw[->, thick] (0, -1.2) -- (0, 1.2);
+
+	\draw[-, dashed] (1, 0) -- (1, 1);
+	\draw[-, dashed] (3, 0) -- (3, -1);
+
+	% Nodes
+	\draw (4.9,0) node {$x$};
+	\draw (0, 1.4) node {$y$};
+
+	\draw (-0.3, -0.2) node {\contour{white}{$0$}};
+	\draw (-0.3, 1) node {\contour{white}{$1$}};
+
+	\draw (1, -0.3) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (2, -0.3) node {\contour{white}{$\pi$}};
+	\draw (3, -0.3) node {\contour{white}{$\frac{3\pi}{2}$}};
+	\draw (4, -0.3) node {\contour{white}{$2\pi$}};
+
+	\draw (3, 0.5) node[scale=1.3] {\contour{white}{$y=\sin x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (0, 1) circle (1.5pt);
+	\fill [black] (1, 0) circle (1.5pt);
+	\fill [black] (2, 0) circle (1.5pt);
+	\fill [black] (3, 0) circle (1.5pt);
+	\fill [black] (4, 0) circle (1.5pt);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-2.5,-2.5) grid ++(5, 5);
+
+	% Graphs
+	\draw[domain=-0.75:0.75	,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{sin(deg(\x/4*2*pi))/cos(deg(\x/4*2*pi))});
+
+	\draw[domain=1.25:2.5,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{sin(deg(\x/4*2*pi))/cos(deg(\x/4*2*pi))});
+
+	\draw[domain=-1.25:-2.5,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{sin(deg(\x/4*2*pi))/cos(deg(\x/4*2*pi))});
+
+	% Axes
+	\draw[->, thick] (-2.7, 0) -- (2.7, 0);
+	\draw[->, thick] (0, -2.7) -- (0, 2.7);
+
+	\draw[-, dashed] (1, -2.5) -- (1, 2.5);
+	\draw[-, dashed] (-1, -2.5) -- (-1, 2.5);
+
+	% Nodes
+	\draw (3,0) node {$x$};
+	\draw (0, 2.9) node {$y$};
+
+	\draw (-0.2, -0.2) node {\contour{white}{$0$}};
+
+	\draw (1, -0.3) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (2, -0.3) node {\contour{white}{$\pi$}};
+	\draw (-1, -0.3) node {\contour{white}{$-\frac{\pi}{2}$}};
+	\draw (-2, -0.3) node {\contour{white}{$-\pi$}};
+
+	\draw (0, 1.25) node[scale=1.3] {\contour{white}{$y=\tg x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (1, 0) circle (1.5pt);
+	\fill [black] (2, 0) circle (1.5pt);
+	\fill [black] (-1, 0) circle (1.5pt);
+	\fill [black] (-2, 0) circle (1.5pt);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-2.5,-2.5) grid ++(5, 5);
+
+	% Graphs
+	\draw[domain=0.25:1.75	,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{cos(deg(\x/4*2*pi))/sin(deg(\x/4*2*pi))});
+
+	\draw[domain=2.25:2.5,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{cos(deg(\x/4*2*pi))/sin(deg(\x/4*2*pi))});
+
+	\draw[domain=-0.25:-1.75,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{cos(deg(\x/4*2*pi))/sin(deg(\x/4*2*pi))});
+
+	\draw[domain=-2.25:-2.5,smooth,samples=500,variable=\x,black, very thick] plot ({\x},{cos(deg(\x/4*2*pi))/sin(deg(\x/4*2*pi))});
+
+	% Axes
+	\draw[->, thick] (-2.7, 0) -- (2.7, 0);
+	\draw[->, thick] (0, -2.7) -- (0, 2.7);
+
+	\draw[-, dashed] (2, -2.5) -- (2, 2.5);
+	\draw[-, dashed] (-2, -2.5) -- (-2, 2.5);
+
+	% Nodes
+	\draw (3,0) node {$x$};
+	\draw (0, 2.9) node {$y$};
+
+	\draw (-0.2, -0.2) node {\contour{white}{$0$}};
+
+	\draw (1, -0.3) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (2, -0.3) node {\contour{white}{$\pi$}};
+	\draw (-1, -0.3) node {\contour{white}{$-\frac{\pi}{2}$}};
+	\draw (-2, -0.3) node {\contour{white}{$-\pi$}};
+
+	\draw (0, 1.25) node[scale=1.3] {\contour{white}{$y=\ctg x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (1, 0) circle (1.5pt);
+	\fill [black] (2, 0) circle (1.5pt);
+	\fill [black] (-1, 0) circle (1.5pt);
+	\fill [black] (-2, 0) circle (1.5pt);
+
+\end{tikzpicture}
 
 \subsection{Основное}
 
@@ -362,61 +580,61 @@ $ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \a
 
 \subsection{Основные}
 
-$$ \ch^2 x - \sh^2 x = 1 $$
+$ \ch^2 x - \sh^2 x = 1 $
 
-$$ \ctg^2 x - 1 = \frac{1}{\sh^2 x} $$
+$ \ctg^2 x - 1 = \frac{1}{\sh^2 x} $
 
-$$ 1 - \th^2 x = \frac{1}{\ch^2 x} $$
+$ 1 - \th^2 x = \frac{1}{\ch^2 x} $
 
-$$ \th x \, \cth x = 1 $$
+$ \th x \, \cth x = 1 $
 
-$$ \th x = \frac{\sh x}{\ch x} $$
+$ \th x = \frac{\sh x}{\ch x} $
 
 \subsection{Суммы углов}
 
-$$ \sh(x \pm y) = \sh x \, \ch y \pm \sh y \, \ch x $$
+$ \sh(x \pm y) = \sh x \, \ch y \pm \sh y \, \ch x $
 
-$$ \ch(x \pm y) = \ch x \, \ch y \pm \sh y \, \sh x $$
+$ \ch(x \pm y) = \ch x \, \ch y \pm \sh y \, \sh x $
 
-$$ \th(x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \, \th y} $$
+$ \th(x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \, \th y} $
 
 \subsection{Двойные и тройные углы}
 
-$$ \sh 2x = 2\sh x \, \ch x $$
+$ \sh 2x = 2\sh x \, \ch x $
 
-$$ \ch 2x = \ch^2 x + \sh^2 x = 2\ch^2 x - 1 = 1 + 2\sh^2 x $$
+$ \ch 2x = \ch^2 x + \sh^2 x = 2\ch^2 x - 1 = 1 + 2\sh^2 x $
 
-$$ \th 2x = \frac{2\th x}{1 + \th^2 x} = \frac{2}{\th x + \cth x} $$
+$ \th 2x = \frac{2\th x}{1 + \th^2 x} = \frac{2}{\th x + \cth x} $
 
-$$ \sh 3x = 4\sh^3 x + 3\sh x $$
+$ \sh 3x = 4\sh^3 x + 3\sh x $
 
-$$ \ch 3x = 4\ch^3 x - 3\ch x $$
+$ \ch 3x = 4\ch^3 x - 3\ch x $
 
-$$ \th 3x = \th x \cdot \frac{3+\th^2 x}{1 + 3\th^2 x} $$
+$ \th 3x = \th x \cdot \frac{3+\th^2 x}{1 + 3\th^2 x} $
 
 \subsection{Сумма функций}
 
-$$ \sh x \pm \sh y = 2\sh\frac{x\pm y}{2}\,\ch\frac{x\mp y}{2} $$
+$ \sh x \pm \sh y = 2\sh\frac{x\pm y}{2}\,\ch\frac{x\mp y}{2} $
 
-$$ \ch x + \ch y = 2\ch\frac{x+y}{2}\,\ch\frac{x-y}{2} $$
+$ \ch x + \ch y = 2\ch\frac{x+y}{2}\,\ch\frac{x-y}{2} $
 
-$$ \ch x - \ch y = 2\sh\frac{x+ y}{2}\,\sh\frac{x- y}{2} $$
+$ \ch x - \ch y = 2\sh\frac{x+ y}{2}\,\sh\frac{x- y}{2} $
 
-$$ \th x \pm \th y = 2\frac{\sh(x\pm y)}{\ch x\, \ch y} $$
+$ \th x \pm \th y = 2\frac{\sh(x\pm y)}{\ch x\, \ch y} $
 
 \subsection{Произведение функций}
 
-$$ \sh x \, \sh y = \frac12(\ch(x+y)-\ch(x-y)) $$
+$ \sh x \, \sh y = \frac12(\ch(x+y)-\ch(x-y)) $
 
-$$ \sh x \, \ch y = \frac12(\sh(x+y)+\sh(x-y)) $$
+$ \sh x \, \ch y = \frac12(\sh(x+y)+\sh(x-y)) $
 
-$$ \ch x \, \ch y = \frac12(\ch(x+y)+\ch(x-y)) $$
+$ \ch x \, \ch y = \frac12(\ch(x+y)+\ch(x-y)) $
 
 \subsection{Понижение степени и половинный угол}
 
-$$ \ch^2 x = \frac{\ch 2x+1}{2} $$
+$ \ch^2 x = \frac{\ch 2x+1}{2} $
 
-$$ \th^2 x = \frac{\ch 2x-1}{2} $$ 
+$ \th^2 x = \frac{\ch 2x-1}{2} $ 
 
 \subsection{Универсальная гиперболическая подстановка}
 
@@ -436,11 +654,121 @@ $$ \th^2 x = \frac{\ch 2x-1}{2} $$
 
 \subsection{Дифференциирование}
 
+\subsubsection{Свойства}
+
+$ (f(x) + g(x))' = f'(x) + g'(x) $
+
+$ (f(x)\cdot g(x))' = f'(x)\cdot g(x) + f(x)\cdot g'(x) $
+
+$ (k\cdot f(x))' = k\cdot f'(x), k \in R $
+
+$ \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)\cdot g(x) - f(x)\cdot g'(x)}{g^2(x)} $
+
+$ (h(f(x)))' = h'(f(x)) \cdot f'(x) $
+
+\subsubsection{Таблица производных}
+
+\begin{tabular}[t]{||c|c||c|c||}
+	\hline
+		$ f(x) $ & $ f'(x) $ & $ f(x) $ &  $ f'(x) $ \tabularnewline
+	\hline
+		$ c $ & $ 0 $ & $ \tg x $ &  $ \frac{1}{\cos^2 x} $ \tabularnewline
+	\hline
+		$ x^n $ & $ nx^{n-1} $ & $ \ctg x $ &  $ -\frac{1}{\sin^2 x} $ \tabularnewline
+	\hline
+		$ \sqrt{x} $ & $ \frac{1}{2\sqrt{x}} $ & $ \arcsin x $ &  $ \frac{1}{\sqrt{1-x^2}} $ \tabularnewline
+	\hline
+		$ \frac{1}{x} $ & $ -\frac{1}{x^2} $ & $ \arccos x $ &  $ -\frac{1}{\sqrt{1-x^2}} $ \tabularnewline
+	\hline
+		$ a^x $ & $ a^x \ln a $ & $ \arctg x $ &  $ \frac{1}{1+x^2} $ \tabularnewline
+	\hline
+		$ e^x $ & $ e^x $ & $ \arcctg x $ &  $ -\frac{1}{1+x^2} $ \tabularnewline
+	\hline
+		$ \log_a x $ & $ \frac{1}{x \ln a} $ & $ \sqrt[n]{x} $ &  $ \frac{1}{n\sqrt[n]{x^n-1}} $ \tabularnewline
+	\hline
+		$ \ln x $ & $ \frac{1}{x} $ & $ \frac{1}{x^n} $ &  $ -\frac{n}{x^{n+1}} $ \tabularnewline
+	\hline
+		$ \sin x $ & $ \cos x $ & $ \frac{1}{\sqrt{x}} $ &  $ -\frac{1}{2x\sqrt{x}} $ \tabularnewline
+	\hline
+		$ \cos x $ & $ -\sin x $ & $ - $ &  $ - $ \tabularnewline
+	\hline
+\end{tabular}
+
 \subsection{Интегрирование}
 
 \subsubsection{Свойства}
 
+$ \int (f(x) \pm g(x)) dx = \int f(x) dx \pm \int g(x) dx $
+
+$ \int k\cdot f(x) dx = k\cdot \int f(x) dx, k \in \mathbb{R} $
+
+$ \int\limits_a^b f(x) dx = \left.F(x)\right|_b^a = F(b) - F(a) $
+
 \subsubsection{Таблица неопределенных интегралов}
+
+Константа интегрирования будет опускаться для уменьшения размеров.
+
+$ \int x^a dx = \frac{x^{a+1}}{a+1}, a \neq -1 $
+
+$ \int \frac{1}{x} dx = \ln|x| $
+
+$ \int \sin x dx = -\cos x $
+
+$ \int \cos x dx = \sin x $
+
+$ \int \frac{1}{\cos^2 x} dx = \tg x $
+
+$ \int \frac{1}{\sin^2 x} = -\ctg x $
+
+$ \int a^x dx = \frac{a^x}{\ln a}, a>0, a \neq 1 $
+
+$ \int e^x dx = e^x $
+
+$ \int \frac{1}{x^2 + a^2} dx = \frac{1}{a} \arctg\frac{x}{a} $
+
+$ \int \frac{1}{x^2 - a^2} dx = \frac{1}{2a} \ln\left|\frac{x-a}{x+a}\right|, a \neq 0, |x| \neq |a| $
+
+$ \int \frac{1}{\sqrt{a^2-x^2}} dx = \arcsin\frac{x}{a} $
+
+$ \int \frac{1}{\sqrt{x^2\pm a^2}} dx = \ln\left|x+\sqrt{x^2\pm a^2}\right|, x^2-a^2 > 0 $
+
+$ \int \frac{1}{\sin x} dx = \ln\left|\tg\frac{x}{2}\right| $
+
+$ \int \frac{1}{\cos x} dx = \ln\left|\tg\left(\frac{x}{2} + \frac{\pi}{2}\right)\right| $
+
+$ \int \tg x dx = -\ln|\cos x| $
+
+$ \int \ctg x dx = \ln|\sin x| $
+
+$ \int \ln x dx = x(\ln x -1) $
+
+\subsubsection{Приложения определенного интеграла}
+
+Площадь под графиком:
+
+$ S_{(a; b)}(f) = \int\limits_a^b f(x) dx $
+
+$ S_{(t_1; t_2)}(x, y) = \int\limits_{t_1}^{t_2} y(t)\cdot x'(t) dt $ 
+
+$ S_{(\alpha; \beta)}(r) = \frac{1}{2} \int_\alpha^\beta r^2(\phi) d\phi $
+
+Длина линии:
+
+$ L_{(a;b)}(f = \int\limits_a^b \sqrt{1+(f'(x))^2} dx $
+
+$ L_{(t_1; t_2)}(x, y) = \int\limits_{t_1}^{t_2} \sqrt{(x'(t))^2+(y'(t))^2} dt $
+
+$ L_{(\alpha; \beta)}(r) = \frac{1}{2} \int \sqrt{r^2(\phi) + (r'(\phi))^2} d\phi $
+
+Объем тела вращения:
+
+$ V^{OX}_{(a; b)}(f) = \pi \int_a^b f^2(x) dx $
+
+$ V^{OY}_{(a; b)}(f) = 2\pi \int_a^b x\cdot f(x) dx $
+
+Площадь поверхности вращения:
+
+$ S^{OX}_{(a;b)}(f) = 2\pi \int\limits_a^b f(x)\sqrt{1+(f'(x))^2} dx $
 
 \subsection{Исследование функции}
 
@@ -466,13 +794,13 @@ $$ \th^2 x = \frac{\ch 2x-1}{2} $$
 
 Любой вектор можно выразить через базис и координатный столбец: 
 $$
-	\boldsymbol{x} = \mathbb{e}\cdot [x]_\mathbb{e} = (\boldsymbol{e_1}, \boldsymbol{e_2}, \dots, \boldsymbol{e_n}) \cdot 
+	\boldsymbol{x} = x_1\boldsymbol{e_1} + x_2\boldsymbol{e_2} + \dots + x_n\boldsymbol{e_n} = (\boldsymbol{e_1}, \boldsymbol{e_2}, \dots, \boldsymbol{e_n}) \cdot 
 	\begin{pmatrix}
 		x_1\\
 		x_2\\
 		\dots\\
 		x_n
-	\end{pmatrix} = x_1\boldsymbol{e_1} + x_2\boldsymbol{e_2} + \dots + x_n\boldsymbol{e_n}; 
+	\end{pmatrix} = \mathbb{e}\cdot [x]_\mathbb{e}; 
 $$
 
 Линейные операции над вектором равносильны линейным операциям над его координатным столбцом:
