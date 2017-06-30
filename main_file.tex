@@ -20,6 +20,7 @@
 \usepackage{mathtools}
 \usepackage{color}
 \usepackage{ulem}
+\usepackage{tabu}
 
 \usepackage[outline]{contour}
 \contourlength{1.2pt}
@@ -39,7 +40,7 @@
 \newenvironment{sqcases}{\matrix@check\sqcases\env@sqcases}{\endarray\right.}\def\env@sqcases{\let\@ifnextchar\new@ifnextchar\left\lbrack\def\arraystretch{1.2}\array{@{}l@{\quad}l@{}}}\makeatother
 
 % объявляем новую команду для переноса строки внутри ячейки таблицы
-\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand{\specialcell}[2][c]{\begin{tabu}[#1]{@{}c@{}}#2\end{tabu}}
 
 	\title{Math formulae.}
 
@@ -56,6 +57,8 @@
 \newpage
 
 \setcounter{page}{1}
+
+\tabulinesep=1.2mm
 
 %--------------------------------------------------------------------------------%
 %--------------------------------------------------------------------------------%

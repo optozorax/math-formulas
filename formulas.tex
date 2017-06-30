@@ -34,6 +34,16 @@ $ \sqrt{\mathstrut a\pm \sqrt{\mathstrut b}} = \sqrt{\mathstrut \frac{a + \sqrt{
 	\end{aligned}\right. $
 \end{center}
 
+Симметричное уравнение:
+
+$ 3x^4 + 4x^3 - x^2 + 4x + 3 = 0 $ - делим на $x^2$
+
+$ 3\left(x^2 + \frac{1}{x^2}\right) + 4\left(x+\frac{1}{x}\right)-1 = 0 $
+
+$ \left(x+\frac{1}{x}\right)^2 = \left(x^2+\frac{1}{x^2}\right) + 2 $
+
+$ 3y^2 + 4y + 5 = 0 $
+
 %--------------------------------------------------------------------------------%
 
 \section{Свойства степени}
@@ -240,7 +250,6 @@ $ S_\infty = \frac{b_1}{1-q}, \left|q\right| < 1 $
 	\fill [black] (4, 0) circle (1.5pt);
 
 \end{tikzpicture}
-
 \begin{tikzpicture}
 
 	% Grid
@@ -320,7 +329,6 @@ $ S_\infty = \frac{b_1}{1-q}, \left|q\right| < 1 $
 	\fill [black] (-2, 0) circle (1.5pt);
 
 \end{tikzpicture}
-
 \begin{tikzpicture}
 
 	% Grid
@@ -361,6 +369,146 @@ $ S_\infty = \frac{b_1}{1-q}, \left|q\right| < 1 $
 	\fill [black] (2, 0) circle (1.5pt);
 	\fill [black] (-1, 0) circle (1.5pt);
 	\fill [black] (-2, 0) circle (1.5pt);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-2.5,-0.5) grid ++(5, 3);
+
+	% Graphs
+	\draw[domain=0.25:1.75	,smooth,samples=500,variable=\x,black, very thick] plot ({cos(deg(\x/4*2*pi))/sin(deg(\x/4*2*pi))}, {\x});
+
+	% Axes
+	\draw[->, thick] (-2.7, 0) -- (2.7, 0);
+	\draw[->, thick] (0, -0.7) -- (0, 2.7);
+
+	\draw[-, dashed] (2.5, 2) -- (-2.5, 2);
+
+	% Nodes
+	\draw (3,0) node {$x$};
+	\draw (0, 2.9) node {$y$};
+
+	\draw (-0.2, -0.2) node {\contour{white}{$0$}};
+
+	\draw (-0.3, 1) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (-0.3, 2) node {\contour{white}{$\pi$}};
+
+	\draw (-1.25, 0.5) node[scale=1.3] {\contour{white}{$y=\arcctg x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (0, 1) circle (1.5pt);
+	\fill [black] (0, 2) circle (1.5pt);
+
+\end{tikzpicture}
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-2.5,-1.5) grid ++(5, 3);
+
+	% Graphs
+	\draw[domain=-0.75:0.75	,smooth,samples=500,variable=\x,black, very thick] plot ({sin(deg(\x/4*2*pi))/cos(deg(\x/4*2*pi))}, {\x});
+
+	% Axes
+	\draw[->, thick] (-2.7, 0) -- (2.7, 0);
+	\draw[->, thick] (0, -1.7) -- (0, 1.7);
+
+	\draw[-, dashed] (2.5, 1) -- (-2.5, 1);
+	\draw[-, dashed] (2.5, -1) -- (-2.5, -1);
+
+	% Nodes
+	\draw (3,0) node {$x$};
+	\draw (0, 1.9) node {$y$};
+
+	\draw (-0.2, -0.2) node {\contour{white}{$0$}};
+
+	\draw (-0.3, 1) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (-0.3, -1) node {\contour{white}{$-\frac{\pi}{2}$}};
+
+	\draw (-1.25, 0.5) node[scale=1.3] {\contour{white}{$y=\arctg x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (0, 1) circle (1.5pt);
+	\fill [black] (0, -1) circle (1.5pt);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-1.5,-1.75) grid ++(3, 3.5);
+
+	% Graphs
+	\draw[domain=-1.5:1.5, smooth,samples=500,variable=\x,black, very thick] plot ({sin(deg(\x/3*pi))}, {\x});
+
+	% Axes
+	\draw[->, thick] (-1.7, 0) -- (1.7, 0);
+	\draw[->, thick] (0, -1.95) -- (0, 1.95);
+
+	\draw[-, dashed] (-1, -1.5) -- (-1, 0);
+	\draw[-, dashed] (1, 1.5) -- (1, 0);
+
+	\draw[-, dashed] (-1, -1.5) -- (0, -1.5);
+	\draw[-, dashed] (1, 1.5) -- (0, 1.5);
+
+	% Nodes
+	\draw (1.9,0) node {$x$};
+	\draw (0, 2.15) node {$y$};
+
+	\draw (-0.2, -0.3) node {\contour{white}{$0$}};
+
+	\draw (-0.3, 1.5) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (-0.3, -1.5) node {\contour{white}{$-\frac{\pi}{2}$}};
+	\draw (-1, -0.3) node {\contour{white}{$-1$}};
+	\draw (1, -0.3) node {\contour{white}{$1$}};
+
+	\draw (0, -2.25) node[scale=1.3] {\contour{white}{$y=\arcsin x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (0, 1.5) circle (1.5pt);
+	\fill [black] (0, -1.5) circle (1.5pt);
+	\fill [black] (1, 0) circle (1.5pt);
+	\fill [black] (-1, 0) circle (1.5pt);
+
+\end{tikzpicture}
+\begin{tikzpicture}
+
+	% Grid
+	\draw[step=0.5, very thin, gray] (-1.5,-0.5) grid ++(3, 3.5);
+
+	% Graphs
+	\draw[domain=0:3, smooth,samples=500,variable=\x,black, very thick] plot ({cos(deg(\x/3*pi))}, {\x});
+
+	% Axes
+	\draw[->, thick] (-1.7, 0) -- (1.7, 0);
+	\draw[->, thick] (0, -0.7) -- (0, 3.2);
+
+	\draw[-, dashed] (-1, 3) -- (-1, 0);
+	\draw[-, dashed] (-1, 3) -- (0, 3);
+
+	% Nodes
+	\draw (1.9,0) node {$x$};
+	\draw (0, 3.4) node {$y$};
+
+	\draw (-0.2, -0.3) node {\contour{white}{$0$}};
+
+	\draw (-0.3, 1.5) node {\contour{white}{$\frac{\pi}{2}$}};
+	\draw (-0.3, 3) node {\contour{white}{$\pi$}};
+	\draw (-1, -0.3) node {\contour{white}{$-1$}};
+	\draw (1, -0.3) node {\contour{white}{$1$}};
+
+	\draw (0, -1) node[scale=1.3] {\contour{white}{$y=\arccos x$}};
+
+	% Points
+	\fill [black] (0, 0) circle (1.5pt);
+	\fill [black] (0, 1.5) circle (1.5pt);
+	\fill [black] (0, 3) circle (1.5pt);
+	\fill [black] (1, 0) circle (1.5pt);
+	\fill [black] (-1, 0) circle (1.5pt);
 
 \end{tikzpicture}
 
@@ -434,20 +582,19 @@ $ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \a
 
 \subsection{Универсальная тригонометрическая подстановка}
 
-{\renewcommand{\arraystretch}{2}
-\begin{tabular}[t]{||c|c||}
+\begin{tabu}[t]{||c|c||}
 	\hline
-		$ \tg \cfrac{\alpha}{2} = t $ & 		$ \sin \alpha = \cfrac{2t}{1 + t^2} $ \tabularnewline
+		$ \tg \frac{\alpha}{2} = t $ & 		$ \sin \alpha = \frac{2t}{1 + t^2} $ \\
 	\hline
-		$ \alpha = 2\arctg t $ & 		$ \cos \alpha = \cfrac{1 - t^2}{1 + t^2} $ \tabularnewline
+		$ \alpha = 2\arctg t $ & 		$ \cos \alpha = \frac{1 - t^2}{1 + t^2} $ \\
 	\hline
-		$ d\alpha = \cfrac{2dt}{1+t^2}$ & 	$ \tg \alpha = \cfrac{2t}{1-t^2} $ \tabularnewline
+		$ d\alpha = \frac{2dt}{1+t^2}$ & 	$ \tg \alpha = \frac{2t}{1-t^2} $ \\
 	\hline
-\end{tabular}}
+\end{tabu}
 
 \subsection{Таблица с суммой углов}
 
-\begin{tabular}[t]{||c|c|c|c|c|c|c|c|c||}
+\begin{tabu}[t]{||c|c|c|c|c|c|c|c|c||}
 	\hline
 		$ \alpha $ &
 			\specialcell{$ \frac{\pi}{2} - \alpha $ \\ $ 90^{\circ} - \alpha $} &
@@ -457,79 +604,77 @@ $ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \a
 			\specialcell{$ \frac{3\, \pi}{2} - \alpha $ \\ $ 270^{\circ} - \alpha $} &
 			\specialcell{$ \frac{3\, \pi}{2} + \alpha $ \\ $ 270^{\circ} + \alpha $} &
 			\specialcell{$ 2\, \pi - \alpha $ \\ $ 360^{\circ} - \alpha $} &
-			\specialcell{$ 2\, \pi + \alpha $ \\ $ 360^{\circ} + \alpha $} \tabularnewline
+			\specialcell{$ 2\, \pi + \alpha $ \\ $ 360^{\circ} + \alpha $} \\
 	\hline
-		$ \sin \alpha $ & 	$ \cos \alpha $ & 	$ \cos \alpha $ & 	$ \sin \alpha $ & 	$ -\sin \alpha $ & 	$ -\cos \alpha $ & 	$ -\cos \alpha $ & 	$ -\sin \alpha $ & 	$ \sin \alpha $ \tabularnewline
+		$ \sin \alpha $ & 	$ \cos \alpha $ & 	$ \cos \alpha $ & 	$ \sin \alpha $ & 	$ -\sin \alpha $ & 	$ -\cos \alpha $ & 	$ -\cos \alpha $ & 	$ -\sin \alpha $ & 	$ \sin \alpha $ \\
 	\hline
-		$ \cos \alpha $ & 	$ \sin \alpha $ & 	$ -\sin \alpha $ & 	$ -\cos \alpha $ & 	$ -\cos \alpha $ & 	$ -\sin \alpha $ & 	$ \sin \alpha $ & 	$ \cos \alpha $ & 	$ \cos \alpha $ \tabularnewline
+		$ \cos \alpha $ & 	$ \sin \alpha $ & 	$ -\sin \alpha $ & 	$ -\cos \alpha $ & 	$ -\cos \alpha $ & 	$ -\sin \alpha $ & 	$ \sin \alpha $ & 	$ \cos \alpha $ & 	$ \cos \alpha $ \\
 	\hline
-		$ \tg \alpha $ & 	$ \ctg \alpha $ & 	$ -\ctg \alpha $ & 	$ -\tg \alpha $ & 	$ \tg \alpha $ & 	$ \ctg \alpha $ & 	$ -\ctg \alpha $ & 	$ -\tg \alpha $ & 	$ \tg \alpha $ \tabularnewline
+		$ \tg \alpha $ & 	$ \ctg \alpha $ & 	$ -\ctg \alpha $ & 	$ -\tg \alpha $ & 	$ \tg \alpha $ & 	$ \ctg \alpha $ & 	$ -\ctg \alpha $ & 	$ -\tg \alpha $ & 	$ \tg \alpha $ \\
 	\hline
-		$ \ctg \alpha $ & 	$ \tg \alpha $ & 	$ -\tg \alpha $ & 	$ -\ctg \alpha $ & 	$ \ctg \alpha $ & 	$ \tg \alpha $ & 	$ -\tg \alpha $ & 	$ -\ctg \alpha $ & 	$ \ctg \alpha $ \tabularnewline
+		$ \ctg \alpha $ & 	$ \tg \alpha $ & 	$ -\tg \alpha $ & 	$ -\ctg \alpha $ & 	$ \ctg \alpha $ & 	$ \tg \alpha $ & 	$ -\tg \alpha $ & 	$ -\ctg \alpha $ & 	$ \ctg \alpha $ \\
 	\hline
-\end{tabular}
+\end{tabu}
 
 \subsection{Тригонометрические уравнения}
 
-\begin{tabular}[t]{||c|c|c||}
+\begin{tabu}[t]{||c|c|c||}
 	\hline
-		Уравнение & Решение & Условие \tabularnewline
+		Уравнение & Решение & Условие \\
 	\hline
-		$ \sin x = a $ & 	$ x = (-1)^k\, \arcsin a + \pi\, k $ & 	$ |a| \le 1 $ \tabularnewline
+		$ \sin x = a $ & 	$ x = (-1)^k\, \arcsin a + \pi\, k $ & 	$ |a| \le 1 $ \\
 	\hline
-		$ \cos x = a $ & 	$ x = \pm \arccos a + 2\, \pi\, k $ & 	$ |a| \le 1 $ \tabularnewline
+		$ \cos x = a $ & 	$ x = \pm \arccos a + 2\, \pi\, k $ & 	$ |a| \le 1 $ \\
 	\hline
-		$ \tg x = a $ & 	$ x = \arctg a + \pi\, k $ & 	$ - $ \tabularnewline
+		$ \tg x = a $ & 	$ x = \arctg a + \pi\, k $ & 	$ - $ \\
 	\hline
-		$ \ctg x = a $ & 	$ x = \arcctg a + \pi\, k $ & 	$ - $ \tabularnewline
+		$ \ctg x = a $ & 	$ x = \arcctg a + \pi\, k $ & 	$ - $ \\
 	\hline
-\end{tabular}
+\end{tabu}
 
 Частные случаи:
 
-\begin{tabular}[t]{||c|c||c|c||}
+\begin{tabu}[t]{||c|c||c|c||}
 	\hline
-		Уравнение & Решение & Уравнение & Решение \tabularnewline
+		Уравнение & Решение & Уравнение & Решение \\
 	\hline
-		$ \sin x = 0 $ & 	$ x = \pi\, k $ & 				$ \cos x = 0 $ &	$ x = \frac{\pi}{2} + \pi\, k $ \tabularnewline
+		$ \sin x = 0 $ & 	$ x = \pi\, k $ & 				$ \cos x = 0 $ &	$ x = \frac{\pi}{2} + \pi\, k $ \\
 	\hline
-		$ \sin x = 1 $ & 	$ x = \frac{\pi}{2} + 2\, \pi\, k $ & 	$ \cos x = 1 $ & 	$ x = 2\, \pi\, k $ \tabularnewline
+		$ \sin x = 1 $ & 	$ x = \frac{\pi}{2} + 2\, \pi\, k $ & 	$ \cos x = 1 $ & 	$ x = 2\, \pi\, k $ \\
 	\hline
-		$ \sin x = -1 $ & 	$ x = -\frac{\pi}{2} + 2\, \pi\, k $ & 	$ \cos x = -1 $ & 	$ x = \pi + 2\, \pi\, k $ \tabularnewline
+		$ \sin x = -1 $ & 	$ x = -\frac{\pi}{2} + 2\, \pi\, k $ & 	$ \cos x = -1 $ & 	$ x = \pi + 2\, \pi\, k $ \\
 	\hline
-		$ \tg x = 0 $ & 	$ x = \pi\, k $ & 				$ \ctg x = 0 $ & 	$ x = \frac{\pi}{2} + \pi\, k $ \tabularnewline
+		$ \tg x = 0 $ & 	$ x = \pi\, k $ & 				$ \ctg x = 0 $ & 	$ x = \frac{\pi}{2} + \pi\, k $ \\
 	\hline
-		$ \tg x = 1 $ & 	$ x = \frac{\pi}{4} + \pi\, k $ & 		$ \ctg x = 1 $ & 	$ x = \frac{\pi}{4} + \pi\, k $ \tabularnewline
+		$ \tg x = 1 $ & 	$ x = \frac{\pi}{4} + \pi\, k $ & 		$ \ctg x = 1 $ & 	$ x = \frac{\pi}{4} + \pi\, k $ \\
 	\hline
-		$ \tg x = -1 $ & 	$ x = -\frac{\pi}{4} + \pi\, k $ & 		$ \ctg x = -1 $ & 	$ x = \frac{3\, \pi}{4} + \pi\, k $ \tabularnewline
+		$ \tg x = -1 $ & 	$ x = -\frac{\pi}{4} + \pi\, k $ & 		$ \ctg x = -1 $ & 	$ x = \frac{3\, \pi}{4} + \pi\, k $ \\
 	\hline
-\end{tabular}
+\end{tabu}
 
 \subsection{Обратные тригонометрические функции:}
 
-{\renewcommand{\arraystretch}{1}
-\begin{tabular}[t]{||c||c||c||}
+\begin{tabu}[t]{||c||c||c||}
 	\hline
-		$ \sin\arcsin x = x $            & $ \sin\arccos x = \sqrt{1-x^2} $          & $ \arcsin(-x) = -\arcsin x $              \tabularnewline
+		$ \sin\arcsin x = x $            & $ \sin\arccos x = \sqrt{1-x^2} $          & $ \arcsin(-x) = -\arcsin x $              \\
 	\hline
-		$ \arcsin\sin\alpha = \alpha $   & $ \cos\arcsin x = \sqrt{1-x^2} $            & $ \arccos(-x) = \pi - \arccos x $         \tabularnewline
-	\hline
-	\hline
-		$ \cos\arccos x = x $            & $ \sin\arctg x = \cfrac{x}{\sqrt{1+x^2}} $ & $ \arctg(-x) = -\arctg x $                \tabularnewline
-	\hline
-		$ \arccos\cos\alpha = \alpha $   & $ \cos\arctg x = \cfrac{1}{\sqrt{1+x^2}} $ & $ \arcctg(-x) = \pi - \arcctg x $         \tabularnewline
+		$ \arcsin\sin\alpha = \alpha $   & $ \cos\arcsin x = \sqrt{1-x^2} $            & $ \arccos(-x) = \pi - \arccos x $         \\
 	\hline
 	\hline
-		$ \tg\arctg x = x $              & $ \tg\arcsin x = \cfrac{x}{\sqrt{1-x^2}} $ & $ \arcsin x + \arccos x = \cfrac{\pi}{2} $ \tabularnewline
+		$ \cos\arccos x = x $            & $ \sin\arctg x = \frac{x}{\sqrt{1+x^2}} $ & $ \arctg(-x) = -\arctg x $                \\
 	\hline
-		$ \arctg\tg\alpha = \alpha $     & $ \tg\arccos x = \cfrac{\sqrt{1-x^2}}{x} $ & $ \arctg x + \arcctg x = \cfrac{\pi}{2} $  \tabularnewline
+		$ \arccos\cos\alpha = \alpha $   & $ \cos\arctg x = \frac{1}{\sqrt{1+x^2}} $ & $ \arcctg(-x) = \pi - \arcctg x $         \\
 	\hline
-\end{tabular}}
+	\hline
+		$ \tg\arctg x = x $              & $ \tg\arcsin x = \frac{x}{\sqrt{1-x^2}} $ & $ \arcsin x + \arccos x = \frac{\pi}{2} $ \\
+	\hline
+		$ \arctg\tg\alpha = \alpha $     & $ \tg\arccos x = \frac{\sqrt{1-x^2}}{x} $ & $ \arctg x + \arcctg x = \frac{\pi}{2} $  \\
+	\hline
+\end{tabu}
 
 \subsection{Сумма обратных тригонометрических функций}
 
-{\renewcommand{\arraystretch}{1.5}
-\begin{tabular}[t]{||c||}
+\begin{tabu}[t]{||c||}
 	\hline
 		$ \arcsin x - \arcsin y =  \arcsin x + \arcsin(-y) $ \\
 		$ \Sigma_{\sin{}} = \arcsin\left(x\sqrt{\mathstrut 1-y^2}+y\sqrt{\mathstrut 1-x^2}\right) $ \\
@@ -553,7 +698,7 @@ $ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \a
 	\hline
 	\hline
 		$ \arctg x - \arctg y =  \arctg x + \arctg(-y) $ \\
-		$ \Sigma_{\tg{}} = \arctg\cfrac{x+y}{1-xy} $ \\
+		$ \Sigma_{\tg{}} = \arctg\frac{x+y}{1-xy} $ \\
 	\hline
 		$ \boxed{\arctg x + \arctg y =} $
 		$ \left\{ \begin{aligned}
@@ -562,13 +707,91 @@ $ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \a
 			-\pi+\Sigma_{\tg{}}, \quad & x < 0, \quad & xy>1 \\
 		\end{aligned} \right. $ \\
 	\hline
-\end{tabular}}
+\end{tabu}
 
 \subsection{Таблица значений функций}
 
 \subsubsection{Для стандартных углов}
 
+\begin{tabu}[t]{||c|c|c|c|c|c|c|c|c|c||}
+	\hline
+		$ \alpha $ &
+		$ 0 $ &
+		$ \cfrac{\pi}{6} $ &
+		$ \cfrac{\pi}{4} $ &
+		$ \cfrac{\pi}{3} $ &
+		$ \cfrac{\pi}{2} $ &
+		$ \cfrac{2\pi}{3} $ &
+		$ \cfrac{3\pi}{4} $ &
+		$ \cfrac{5\pi}{6} $ &
+		$ \pi $ \\
+	\hline
+		$ \alpha^{\circ} $ &
+		$ 0^{\circ} $ &
+		$ 30^{\circ} $ &
+		$ 45^{\circ} $ &
+		$ 60^{\circ} $ &
+		$ 90^{\circ} $ &
+		$ 120^{\circ} $ &
+		$ 135^{\circ} $ &
+		$ 150^{\circ} $ & 
+		$ 180^{\circ} $ \\
+	\hline
+		$ \sin \alpha $ & 	$ 0 $ & 	$ \cfrac{1}{2} $ & 	$ \cfrac{\sqrt{2}}{2} $ & 	$ \cfrac{\sqrt{3}}{2} $ & 	$ 1 $ & 	$ \cfrac{\sqrt{3}}{2} $ & 	$ \cfrac{\sqrt{2}}{2} $ & 	$ \cfrac{1}{2} $ & $ 0 $ \\
+	\hline
+		$ \cos \alpha $ & 	$ 1 $ & 	$ \cfrac{\sqrt{3}}{2} $ & 	$ \cfrac{\sqrt{2}}{2} $ & 	$ \cfrac{1}{2} $ & 	$ 0 $ & 	$ -\cfrac{1}{2} $ & 	$ -\cfrac{\sqrt{2}}{2} $ & 	$ -\cfrac{\sqrt{3}}{2} $ & $ -1 $ \\
+	\hline
+		$ \tg \alpha $ & 	$ 0 $ & 	$ \cfrac{\sqrt{3}}{3} $ & 	$ 1 $ & 	$ \sqrt{3} $ & 	--- & 	$ -\sqrt{3} $ & 	$ -1 $ & 	$ -\cfrac{\sqrt{3}}{3} $ & $ 0 $ \\
+	\hline
+		$ \ctg \alpha $ & 	--- & 	$ \sqrt{3} $ & 	$ 1 $ & 	$ \cfrac{\sqrt{3}}{3} $ & 	0 & 	$ -\cfrac{\sqrt{3}}{3} $ & 	$ -1 $ & 	$ -\sqrt{3} $ & --- \\
+	\hline
+\end{tabu}
+
 \subsubsection{Для особых углов}
+
+\begin{tabu}[t]{||c|c|c|c|c|c|c||}
+	\hline
+		$ \alpha $ &
+			$ \cfrac{\pi}{12}  =  15^{\circ} $ &
+			$ \cfrac{\pi}{10} = 18^{\circ} $ &
+			$ \cfrac{\pi}{5} = 36^{\circ} $ &
+			$ \cfrac{3\pi}{10} = 54^{\circ} $ &
+			$ \cfrac{2\pi}{5} = 72^{\circ} $ &
+			$ \cfrac{5\pi}{12} = 75^{\circ} $ \\
+	\hline
+		$ \sin \alpha $ &
+		$ \cfrac{\sqrt{3}-1}{2\sqrt{2}} $ & 	
+		$ \cfrac{\sqrt{5}-1}{4} $ & 	
+		$ \cfrac{\sqrt{5-\sqrt{5}}}{2\sqrt{2}} $ & 	
+		$ \cfrac{\sqrt{5}+1}{4} $ & 	
+		$ \cfrac{\sqrt{5+\sqrt{5}}}{2\sqrt{2}} $ & 	
+		$ \cfrac{\sqrt{3}+1}{2\sqrt{2}} $ \\
+	\hline
+		$ \cos \alpha $ & 	
+		$ \cfrac{\sqrt{3}+1}{2\sqrt{2}} $ & 	
+		$ \cfrac{\sqrt{5+\sqrt{5}}}{2\sqrt{2}} $ & 	
+		$ \cfrac{\sqrt{5}+1}{4} $ & 	
+		$ \cfrac{\sqrt{5-\sqrt{5}}}{2\sqrt{2}} $ & 	
+		$ \cfrac{\sqrt{5}-1}{4} $ & 	
+		$ \cfrac{\sqrt{3}-1}{2\sqrt{2}} $ \\
+	\hline
+		$ \tg \alpha $ & 	
+		$ 2-\sqrt{3} $ & 	
+		$ \sqrt{1-\cfrac{2}{\sqrt{5}}} $ & 	
+		$ \sqrt{5-2\sqrt{5}} $ & 	
+		$ \sqrt{1+\cfrac{2}{\sqrt{5}}} $ & 	
+		$ \sqrt{5+2\sqrt{5}} $ & 	
+		$ 2+\sqrt{3} $ \\
+	\hline
+		$ \ctg \alpha $ & 
+		$ 2+\sqrt{3} $ & 	
+		$ \sqrt{5+2\sqrt{5}} $ & 	
+		$ \sqrt{1+\cfrac{2}{\sqrt{5}}} $ & 	
+		$ \sqrt{5-2\sqrt{5}} $ & 	
+		$ \sqrt{1-\cfrac{2}{\sqrt{5}}} $ & 	
+		$ 2-\sqrt{3} $ \\
+	\hline
+\end{tabu}
 
 \subsubsection{Для нестандартных углов}
 
@@ -668,31 +891,31 @@ $ (h(f(x)))' = h'(f(x)) \cdot f'(x) $
 
 \subsubsection{Таблица производных}
 
-\begin{tabular}[t]{||c|c||c|c||}
+\begin{tabu}[t]{||c|c||c|c||}
 	\hline
-		$ f(x) $ & $ f'(x) $ & $ f(x) $ &  $ f'(x) $ \tabularnewline
+		$ f(x) $ & $ f'(x) $ & $ f(x) $ &  $ f'(x) $ \\
 	\hline
-		$ c $ & $ 0 $ & $ \tg x $ &  $ \frac{1}{\cos^2 x} $ \tabularnewline
+		$ c $ & $ 0 $ & $ \tg x $ &  $ \frac{1}{\cos^2 x} $ \\
 	\hline
-		$ x^n $ & $ nx^{n-1} $ & $ \ctg x $ &  $ -\frac{1}{\sin^2 x} $ \tabularnewline
+		$ x^n $ & $ nx^{n-1} $ & $ \ctg x $ &  $ -\frac{1}{\sin^2 x} $ \\
 	\hline
-		$ \sqrt{x} $ & $ \frac{1}{2\sqrt{x}} $ & $ \arcsin x $ &  $ \frac{1}{\sqrt{1-x^2}} $ \tabularnewline
+		$ \sqrt{x} $ & $ \frac{1}{2\sqrt{x}} $ & $ \arcsin x $ &  $ \frac{1}{\sqrt{1-x^2}} $ \\
 	\hline
-		$ \frac{1}{x} $ & $ -\frac{1}{x^2} $ & $ \arccos x $ &  $ -\frac{1}{\sqrt{1-x^2}} $ \tabularnewline
+		$ \frac{1}{x} $ & $ -\frac{1}{x^2} $ & $ \arccos x $ &  $ -\frac{1}{\sqrt{1-x^2}} $ \\
 	\hline
-		$ a^x $ & $ a^x \ln a $ & $ \arctg x $ &  $ \frac{1}{1+x^2} $ \tabularnewline
+		$ a^x $ & $ a^x \ln a $ & $ \arctg x $ &  $ \frac{1}{1+x^2} $ \\
 	\hline
-		$ e^x $ & $ e^x $ & $ \arcctg x $ &  $ -\frac{1}{1+x^2} $ \tabularnewline
+		$ e^x $ & $ e^x $ & $ \arcctg x $ &  $ -\frac{1}{1+x^2} $ \\
 	\hline
-		$ \log_a x $ & $ \frac{1}{x \ln a} $ & $ \sqrt[n]{x} $ &  $ \frac{1}{n\sqrt[n]{x^n-1}} $ \tabularnewline
+		$ \log_a x $ & $ \frac{1}{x \ln a} $ & $ \sqrt[n]{x} $ &  $ \frac{1}{n\sqrt[n]{x^n-1}} $ \\
 	\hline
-		$ \ln x $ & $ \frac{1}{x} $ & $ \frac{1}{x^n} $ &  $ -\frac{n}{x^{n+1}} $ \tabularnewline
+		$ \ln x $ & $ \frac{1}{x} $ & $ \frac{1}{x^n} $ &  $ -\frac{n}{x^{n+1}} $ \\
 	\hline
-		$ \sin x $ & $ \cos x $ & $ \frac{1}{\sqrt{x}} $ &  $ -\frac{1}{2x\sqrt{x}} $ \tabularnewline
+		$ \sin x $ & $ \cos x $ & $ \frac{1}{\sqrt{x}} $ &  $ -\frac{1}{2x\sqrt{x}} $ \\
 	\hline
-		$ \cos x $ & $ -\sin x $ & $ - $ &  $ - $ \tabularnewline
+		$ \cos x $ & $ -\sin x $ & $ - $ &  $ - $ \\
 	\hline
-\end{tabular}
+\end{tabu}
 
 \subsection{Интегрирование}
 
