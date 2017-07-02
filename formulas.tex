@@ -1,38 +1,34 @@
 ﻿\section{Всякое по мелочам}
 
-$ |a| = \left[ \begin{aligned}
-	& a,\text{если\ } a\ge 0 \\
-	& -a,\text{если\ } a < 0
-\end{aligned}\right. $
+$ a^2-b^2 = (a-b)(a+b) $
+
+$ a^2 + b^2 = (a + b)^2 - 2\, a\, b $
+
+$ (a\pm b)^2 = a^2 \pm 2ab + b^2 $
+
+$ a^3 \pm b^3 = (a\pm b)(a^2 \mp ab + b^2) $
+
+$ (a \pm b)^3 = a^3\pm b^3\pm 3\, a\, b\, (a\pm b) $
+
+$ a^4 + a^2 + 1 = (a^2 - a + 1)\, (a^2 - a + 1) $
 
 \begin{center}
 	Уравнение касательной к графику функции $\displaystyle y = f(x) $ в точке $\displaystyle M_0(x_0, f(x_0)) $ имеет вид:
 	$ y = f'(x_0)\, x + (f(x_0) - f'(x_0)\, x_0) $
 \end{center}
 
-$ a^4 + a^2 + 1 = (a^2 - a + 1)\, (a^2 - a + 1) $
-
-$ a^2 + b^2 = (a + b)^2 - 2\, a\, b $
-
-$ (a \pm b)^3 = a^3\pm b^3\pm 3\, a\, b\, (a\pm b) $
-
 $ \sqrt{\mathstrut a\pm \sqrt{\mathstrut b}} = \sqrt{\mathstrut \frac{a + \sqrt{\mathstrut a^2 - b}}{2}}\pm \sqrt{\mathstrut \frac{a - \sqrt{\mathstrut a^2 - b}}{2}} $
 
-\begin{center}
-	Квадратное уравнение:
-	$ a\, x^2 + b\, x + c = 0 \Rightarrow $ $ \left[ \begin{aligned}
-		& a\, (x - x_1)\, (x - x_2) = 0 \\
-		& D = b^2 - 4\, a\, c \\
-		& \left\{ \begin{aligned}
-			& D > 0 \\
-			& x_{1/2} = \frac{-b\pm \sqrt{\mathstrut D}}{2\, a}
-		\end{aligned}\right. \\
-		& \left\{ \begin{aligned}
-			& D = 0 \\
-			& x_{1/2} = \frac{-b}{2\, a}
-		\end{aligned}\right.
-	\end{aligned}\right. $
-\end{center}
+$ \begin{aligned}
+	& \text{Квадратное уравнение:} \\
+	& a\, x^2 + b\, x + c = 0  \Leftrightarrow \\ 
+	& \Leftrightarrow a\, (x - x_1)\, (x - x_2) = 0 \\
+	& x_{1/2} = \frac{-b\pm \sqrt{\mathstrut b^2-4ac}}{2\, a} \\
+	& \left\{ \begin{aligned}
+		& x_1-x_2 = -\frac{b}{a} \\
+		& x_1 \cdot x_2 = \frac{c}{a}
+	\end{aligned} \right.
+\end{aligned} $
 
 Симметричное уравнение:
 
@@ -43,6 +39,56 @@ $ 3\left(x^2 + \frac{1}{x^2}\right) + 4\left(x+\frac{1}{x}\right)-1 = 0 $
 $ \left(x+\frac{1}{x}\right)^2 = \left(x^2+\frac{1}{x^2}\right) + 2 $
 
 $ 3y^2 + 4y + 5 = 0 $
+
+\begin{tabu}[t]{ccccccc}
+	\multicolumn{7}{c}{Если дано $n$ чисел $a_1$, $a_2$, $\dots$, $a_n$, то действительны неравенства:}\\
+	\specialcell{Среднее \\ пропорциональное} & & \specialcell{Среднее \\ геометрическое} & & \specialcell{Среднее 
+	\\ арифметическое} & & \specialcell{Среднее \\ квадратичное} \\
+	$ \cfrac{n}{\cfrac{1}{a_1}+\cfrac{1}{a_2}+\dots+\cfrac{1}{a_n}} $ & $ \leqslant $ & $ \sqrt[n]{a_1\, a_2\, \dots\, a_n} $ &  $ \leqslant $ & $\cfrac{a_1+a_2+\dots+a_n}{n}$ & $ \leqslant $ & $\sqrt{\cfrac{a_1^2+a_2^2+\dots+a_n^2}{n}}$ \\
+	\multicolumn{7}{c}{$ a_1 b_1 + a_2 b_2 \dots + a_n b_n \leqslant \sqrt{a_1^2 + a_2^2 + \dots + a_n^2}\cdot \sqrt{b_1^2 + b_2^2 + \dots + b_n^2} $} \\
+\end{tabu}
+
+\begin{tabu}[t]{ccccccc}
+	Если $f(a) = 0$, $f'(x)>0$ при $x \in (a; +\infty)$, $f$ непрерывна в $a$, то: \\
+	$f(\lambda b + (1-\lambda)a) \leqslant \lambda f(b) + (1-\lambda) f(a)$, $\lambda \in [0, 1]$
+\end{tabu}
+
+$ (1+a)^b > 1 + ab $, при $a > 0$, $ b > 1 $.
+
+%--------------------------------------------------------------------------------%
+
+\section{Модуль}
+
+$ |x| = \sqrt{x^2} = x \cdot \mathop{\text{sgn}} x = \max \{x, -x\} $
+
+$ a \leqslant |a| $
+
+$ |a| \geqslant 0 $
+
+$ |-a| = |a| $
+
+$ |ab| = |a| |b| $
+
+$ \left|\frac{a}{b}\right| = \frac{|a|}{|b|} $
+
+$ |a^k| = |a|^k $
+
+$ |a\pm b| \leqslant |a| + |b| $
+
+$ |a| - |b| \leqslant |a+b| $
+
+$ |a\pm b| \geqslant ||a| - |b|| $
+
+$ |a| \Rightarrow \left[ \begin{aligned}
+	& \left\{ \begin{aligned}
+		& a \\
+		& a \geqslant 0
+	\end{aligned}\right. \\
+	& \left\{ \begin{aligned}
+		& -a \\
+		& a < 0
+	\end{aligned}\right.
+\end{aligned}\right. $
 
 %--------------------------------------------------------------------------------%
 
@@ -82,6 +128,38 @@ $ \sqrt[n]{\mathstrut a} = \sqrt[n\, k]{\mathstrut a^k} $
 
 $ \sqrt[2n]{\mathstrut a^{2n}} = |a| $
 
+$ \sqrt{a} = b \Rightarrow  \left\{ \begin{aligned}
+	& a = b^2 \\
+	& b > 0
+\end{aligned}\right. $
+
+$ \sqrt{a} = \sqrt{b} \Rightarrow  \left\{ \begin{aligned}
+	& a = b \\
+	& a > 0
+\end{aligned}\right. $
+
+$ \sqrt{a} > b \Rightarrow  \left[ \begin{aligned}
+	& \left\{ \begin{aligned}
+		& a > b \\
+		& b \geqslant 0
+	\end{aligned} \right. \\
+	& \left\{ \begin{aligned}
+		& b < 0 \\
+		& a > 0
+	\end{aligned} \right.
+\end{aligned} \right. $
+
+$ \sqrt{a} < b \Rightarrow  \left[ \begin{aligned}
+	& \left\{ \begin{aligned}
+		&  \\
+		& 
+	\end{aligned} \right. \\
+	& \left\{ \begin{aligned}
+		&  \\
+		& 
+	\end{aligned} \right.
+\end{aligned} \right. $
+
 %--------------------------------------------------------------------------------%
 
 \section{Свойства логарифма}
@@ -89,6 +167,8 @@ $ \sqrt[2n]{\mathstrut a^{2n}} = |a| $
 \begin{center}
 	если $ a^x = b $, то $ \log_a b = x $.
 \end{center}
+
+$ \log_3 9 = 2 $
 
 $ a^{\log_b c} = c^{\log_b a} $
 
@@ -110,33 +190,23 @@ $ \log_a 1 = 0 $
 
 $ \log_a a = 1 $
 
-$ \log_{\phi(x)} f(x) \ge \log_{\phi(x)} g(x) \Rightarrow $ $ \left[
-	\begin{aligned}
-		\left\{ \begin{aligned}
-			& f(x) \ge g(x) \\
-			& g(x) > 0 \\
-			& \phi(x) > 1
-		\end{aligned} \right.
-		\left\{ \begin{aligned}
-			& f(x) \le g(x) \\
-			& f(x) > 0 \\
-			& 0 < \phi(x) < 1
-		\end{aligned} \right.
-	\end{aligned} \right. $
+$ \ln a = \log_e a $
 
-$ \log_{\phi(x)} f(x) > \log_{\phi(x)} g(x) \Rightarrow $ $ \left[
-	\begin{aligned}
-		\left\{ \begin{aligned}
-			& f(x) > g(x) \\
-			& g(x) > 0 \\
-			& \phi(x) > 1
-		\end{aligned} \right.
-		\left\{ \begin{aligned}
-			& f(x) < g(x) \\
-			& f(x) > 0 \\
-			& 0 < \phi(x) < 1
-		\end{aligned} \right.
-	\end{aligned} \right. $
+$ \lg a = \log_{10} a $
+
+$ \log_{\phi(x)} f(x) \ge \log_{\phi(x)} g(x) \Rightarrow $ $ \left[
+\begin{aligned}
+	\left\{ \begin{aligned}
+		& f(x) \ge g(x) \\
+		& g(x) > 0 \\
+		& \phi(x) > 1
+	\end{aligned} \right.
+	\left\{ \begin{aligned}
+		& f(x) \le g(x) \\
+		& f(x) > 0 \\
+		& 0 < \phi(x) < 1
+	\end{aligned} \right.
+\end{aligned} \right. $
 
 %--------------------------------------------------------------------------------%
 	
@@ -578,7 +648,7 @@ $ \sin^3 \alpha = \frac14(3\sin \alpha - \sin 3 \alpha) $
 
 $ \cos^3 \alpha = \frac14(3\cos \alpha + \cos 3 \alpha) $
 
-$ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \alpha}} = \frac{\sin \alpha}{1 + \cos \alpha} $
+$ \tg \frac{\alpha}{2} = \pm \sqrt{\mathstrut \frac{1 - \cos \alpha}{1 + \cos \alpha}} = \frac{\sin \alpha}{1 + \cos \alpha} = \frac{1-\cos \alpha}{\sin \alpha} $
 
 \subsection{Универсальная тригонометрическая подстановка}
 
@@ -873,7 +943,8 @@ $ \th^2 x = \frac{\ch 2x-1}{2} $
 
 \subsection{Пределы}
 
-\subsection{Ряды}
+свойства пределов, производная внутри предела, замечательные пределы, эквивалентности(включая и факториала)
+
 
 \subsection{Дифференциирование}
 
@@ -921,11 +992,29 @@ $ (h(f(x)))' = h'(f(x)) \cdot f'(x) $
 
 \subsubsection{Свойства}
 
+$ \int 0 dx = C $
+
+$ \int f(x) dx = F(x) + C $
+
+$ d(\int f(x) dx) = f(x) dx $
+
+$ \int dx = x + C $
+
 $ \int (f(x) \pm g(x)) dx = \int f(x) dx \pm \int g(x) dx $
 
 $ \int k\cdot f(x) dx = k\cdot \int f(x) dx, k \in \mathbb{R} $
 
+$ \int u dv = uv - \int v du $
+
 $ \int\limits_a^b f(x) dx = \left.F(x)\right|_b^a = F(b) - F(a) $
+
+$ \int_a^a f(x) dx = 0 $
+
+$ \int_a^b f(x) dx = -\int_b^a f(x) dx $
+
+$ \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx, c \in [a, b] $
+
+$\displaystyle \lim_{n \to \infty} \left[ \frac{1}{n} \sum_{i = 1}^{n} f\left(\frac{i}{n}\right) \right] = \int\limits_0^1 f(x) dx $
 
 \subsubsection{Таблица неопределенных интегралов}
 
@@ -965,6 +1054,14 @@ $ \int \ctg x dx = \ln|\sin x| $
 
 $ \int \ln x dx = x(\ln x -1) $
 
+$ \int \ch x dx = \sh x $
+
+$ \int \sh x dx = \ch x $
+
+$ \int \frac{1}{\ch^2 x} dx = \th x $
+
+$ \int \frac{1}{\sh^2 x} dx = -\cth x $
+
 \subsubsection{Приложения определенного интеграла}
 
 Площадь под графиком:
@@ -993,7 +1090,49 @@ $ V^{OY}_{(a; b)}(f) = 2\pi \int_a^b x\cdot f(x) dx $
 
 $ S^{OX}_{(a;b)}(f) = 2\pi \int\limits_a^b f(x)\sqrt{1+(f'(x))^2} dx $
 
+Центр масс:
+
+Если фигура ограничена снизу $g(x)$, а сверху $f(x)$, то центр масс находится в точке $C(x_c, y_c)$:
+
+$ x_c = \frac{1}{S} \int\limits_a^b x(f(x)-g(x)) dx $
+
+$ y_c = \frac{1}{2S} \int\limits_a^b (f^2(x)-g^2(x)) dx $
+
+$ S = \int\limits_a^b (f(x)-g(x)) dx  $
+
 \subsection{Исследование функции}
+
+\begin{tabu}[t]{||c|c|c||}
+	\hline
+		N & Название & Символьная запись \\
+	\hline
+		1 & Область определения & D(y) \\
+	\hline
+		2 & Область значений & E(y) \\
+	\hline
+		3 & \specialcell{Четность \\ Нечетность} & \specialcell{$f(-x)=f(x)$ \\ $f(-x)=-f(x)$} \\
+	\hline
+		4 & Период функции & $f(x)=f(x+T)$ \\
+	\hline
+		5 & Нули функции & $y=0$ \\
+	\hline
+		6 & Функция положительная & $y>0$ \\
+	\hline
+		7 & Функция отрицательная & $y<0$ \\
+	\hline
+		8 & Экстремумы & $y'=0$ \\
+	\hline
+		9 & Точки максимума & $y''>0$ \\
+	\hline
+		10 & Точки минимума & $y''<0$ \\
+	\hline
+		11 & Возрастание функии & $y'>0$ \\
+	\hline
+		12 & Убывание функции & $y'<0$ \\
+	\hline
+		13 & График функции & --- \\
+	\hline
+\end{tabu}
 
 \subsection{Функции нескольких переменных}
 
@@ -1113,20 +1252,300 @@ $$ B_\mathbb{e} = \left\lceil B(\boldsymbol{e_i},\boldsymbol{e_j})\right\rfloor_
 
 %--------------------------------------------------------------------------------%
 
-\section{Геометрия}
-
-\subsection{Планиметрия}
+\section{Планиметрия}
 
 \subsection{Аксиомы}
 
 \subsection{Теоремы}
 
+Сказать о соотношении сторон треугольника у биссектрисы здесь.
+
+\subsection{Стандартные фигуры}
+
 \subsubsection{Треугольник}
 
-\subsection{Окружность}
+$a$ - первая сторона.
+$b$ - вторая сторона.
+$c$ - третья сторона.
+$\boldsymbol{A}$ - вершина напротив стороны $a$.
+$\boldsymbol{B}$ - вершина напротив стороны $b$.
+$\boldsymbol{C}$ - вершина напротив стороны $c$.
+$P$ - периметр.
+$p$ - полупериметр.
+$h_a$ - высота к стороне $a$.
+$h_b$ - высота к стороне $b$.
+$h_c$ - высота к стороне $c$.
+$m_a$ - медиана к стороне $a$.
+$m_b$ - медиана к стороне $b$.
+$m_c$ - медиана к стороне $c$.
+$l_a$ - биссектриса к стороне $a$.
+$l_b$ - биссектриса к стороне $b$.
+$l_c$ - биссектриса к стороне $c$.
+$S$ - площадь.
+$\alpha$ - угол напротив стороны $a$.
+$\beta$ - угол напротив стороны $b$.
+$\gamma$ - угол напротив стороны $c$.
+$r$ - радиус вписанной окружности.
+$R$ - радиус описанной окружности.
+
+$ \alpha + \beta + \gamma = 180^{\circ} $
+
+$ P = a + b + c $
+
+$ p = \frac{P}{2} $
+
+$ S = \sqrt{p(p-a)(p-b)(p-c)} $
+
+$ S = \frac{1}{4}\sqrt{2(a^2 b^2 + b^2 c^2 + a^2 c^2) - (a^4 + b^4 + c^4)} $
+
+$S = \frac{a h_a}{2} $
+
+$ S = \frac{1}{2} b c \sin \alpha $
+
+$ S = \frac{a^2 \sin \beta \sin \gamma}{2 \sin \alpha} $
+
+$ S = p r $
+
+$ S = \frac{abc}{4 R} $
+
+$ h_a = \frac{2 S}{a} $
+
+$ m_a = \frac{1}{2} \sqrt{2(b^2 + c^2) - a^2} $
+
+$ l_a = \frac{\sqrt{bc[(b+c)^2-a^2]}}{b+c} = \frac{2 b c \cos \frac{\alpha}{2}}{b + c} $
+
+$ a = \frac{2}{3}\sqrt{2(m_b^2 + m_c^2) - m_a^2} $
+
+$ r = \frac{2 S}{a + b + c} $
+
+$ \frac{1}{r} = \frac{1}{h_a} + \frac{1}{h_c} + \frac{1}{h_b} $
+
+$ 2 R = \frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma} $
+
+$ a^2 = b^2 + c^2 - 2 a b \cos \alpha $
+
+$ S = \frac{1}{2} \begin{vmatrix}
+	x_1 & y_1 & 1 \\
+	x_2 & y_2 & 1 \\
+	x_3 & y_3 & 1 
+\end{vmatrix} $
+
+\subsubsection{Прямоугольный треугольник}
+
+$a$ - первый катет.
+$b$ - второй катет.
+$c$ - гипотенуза.
+$\boldsymbol{H_c}$ - точка падения высоты $h_c$ на $c$.
+
+$ a^2 + b^2 = c^2 $
+
+$ \gamma = 90^{\circ} $
+
+$ \alpha + \beta = 90^{\circ} $
+
+$ h_c = \frac{a b}{c} $
+
+$ h_c = \sqrt{\boldsymbol{AH_c}\cdot\boldsymbol{BH_c}} $
+
+$ a^2 = c\cdot \boldsymbol{BH_c} $
+
+$ a = c \sin \alpha = c \cos \beta $
+
+$ c = \frac{a}{\sin \alpha} = \frac{a}{\cos \beta} $
+
+$ a = b\tg \alpha = b \ctg \beta $
+
+$ S = \frac{a b}{2} $
+
+$ R = \frac{c}{2} $
+
+\subsubsection{Правильный треугольник}
+
+$ \alpha = \beta = \gamma = 60^{\circ} $
+
+$ a = b = c $
+
+$ R = \frac{a\sqrt{3}}{3} $
+
+$ R = 2r $
+
+$ S = \frac{\sqrt{3}}{4} a^2 $
+
+\subsubsection{Параллелограмм}
+
+$\boldsymbol{A}$
+$\boldsymbol{B}$
+$\boldsymbol{C}$
+$\boldsymbol{D}$
+$\boldsymbol{O}$
+$b = \boldsymbol{AB} = \boldsymbol{CD}$
+$a = \boldsymbol{BC} = \boldsymbol{AD}$
+$d_1 = \boldsymbol{AC}$
+$d_2 = \boldsymbol{BD}$
+$\alpha = \angle A = \angle C$
+$\beta = \angle B = \angle D$
+$\phi$
+$h_a$
+$h_b$
+
+$ \boldsymbol{AB} \parallel \boldsymbol{CD} $
+
+$ \boldsymbol{BC} \parallel \boldsymbol{AD} $
+
+$ \boldsymbol{BO} = \boldsymbol{OD} $
+
+$ \boldsymbol{AO} = \boldsymbol{OC} $
+
+$ \alpha + \beta = 180^{\circ} $
+
+$ d_1^2 + d_2^2 = 2(a^2 + b^2) $
+
+$ S = a h_a $
+
+$ S = a b \sin \alpha $
+
+$ S = \frac{1}{2} d_1 d_2 \sin \phi $
+
+$ S = \frac{d_1^2 - d_2^2}{4} \tg \alpha $
+
+\subsubsection{Прямоугольник}
+
+$ \alpha = \beta = 90^{\circ} $
+
+$ S = a b $
+
+\subsubsection{Ромб}
+
+$ a = b $
+
+$ d_1 \bot d_2 $
+
+$ S = \frac{d_1 d_2}{2} $
+
+\subsubsection{Квадрат}
+
+$ d_1 = d_2 = a\sqrt{2} $
+
+$ R = \frac{\sqrt{2}}{2} a $
+
+$ r = \frac{a}{2} $
+
+$ S = a^2 $
+
+\subsubsection{Трапеция}
+
+$\boldsymbol{A}$
+$\boldsymbol{B}$
+$\boldsymbol{C}$
+$\boldsymbol{D}$
+
+$ \boldsymbol{AD} \parallel \boldsymbol{BC} $
+
+$ \boldsymbol{AB} \nparallel \boldsymbol{CD} $
+
+$ S = \frac{a + b}{2} h $
+
+$ S = \frac{d_1 d_2}{2} \sin \phi $
+
+\subsubsection{Произвольный многоугольник}
+
+Сумма внутренних углов $n$-угольников: $ 180^{\circ}\cdot (n-2) $.
+
+Площадь многоугольника, вписанного около окружности: $S = p r$.
+
+\subsubsection{Правильный многоугольник}
+
+$n$
+$a$
+$r$
+$R$
+
+$ R = \frac{a}{2\sin\frac{\pi}{n}} $
+
+$ r = \frac{a}{2\tg\frac{\pi}{n}} $
+
+$ S =  \frac{n a^2}{4\tg\frac{\pi}{n}} $
+
+\begin{tabu}[t]{||c||c||c|c||}
+	\hline
+		$ n $ & $ S(a) $ & $ R(a) $ & $ r(a) $ \\
+	\hline
+	\hline
+		$ 3 $ & $ \frac{a^2 \sqrt{3}}{4} $ & $ \frac{a}{\sqrt{3}} $ & $ \frac{a}{2 \sqrt{3}} $ \\
+	\hline
+		$ 4 $ & $ a^2 $ & $ \frac{a}{\sqrt{2}} $ & $ \frac{a}{2} $ \\
+	\hline
+		$ 6 $ & $ \frac{3 a^2 \sqrt{3}}{2} $ & $ a $ & $ \frac{a \sqrt{3}}{2} $ \\
+	\hline
+\end{tabu}
+
+\subsubsection{Окружность}
+
+$ S = \pi R^2 $
+
+$ L = 2 \pi R $
+
+Сектор:
+
+$ S_{\text{Сектор}} = \frac{\alpha R^2}{2} $
+
+Сегмент:
+
+$ S_{\text{Сегмент}} = \frac{R^2}{2} (\alpha - \sin \alpha) $
+
+$ x^2 + y^2 = 1 $
+
+\subsubsection{Эллипс}
+
+$ S = \pi a b $ 
+
+$ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $
 
 \subsection{Остальное}
 
-\subsection{Правильный многоугольник}
+\section{Стереометрия}
 
-\subsection{Стереометрия}
+\subsection{Тетраэдр}
+
+$ V = \frac{1}{6} \begin{vmatrix}
+	x_1 & y_1 & z_1 & 1 \\
+	x_2 & y_2 & z_2 & 1 \\
+	x_3 & y_3 & z_3 & 1 \\
+	x_4 & y_4 & z_4 & 1
+\end{vmatrix} $
+
+\subsection{Куб}
+
+\subsection{Параллепипед}
+
+$ S = 2(ab + bc + ac) $
+
+\subsection{Сфера}
+
+$ S = 4 \pi R^2 $ 
+
+$ V = \frac{3}{4} \pi R^3 $
+
+\subsection{Цилиндр}
+
+$ S = 2 \pi R (R+H) $
+
+$ V = \pi R^2 H $
+
+\subsection{Конус}
+
+$ S_{\text{боковая}} = \pi R l $
+
+$ S = \pi R (R + l) $
+
+$ V = \frac{\pi}{3} R^2 H $
+
+\subsection{Усеченый конус}
+
+$ S_{\text{боковая}} = \pi (R+r) l $
+
+$ S = \pi l (R + l) + \pi (R^2 + r^2) $
+
+$ V = \frac{\pi}{3} H (R^2 + Rr + r^2) $
+
+\subsection{Куб}
