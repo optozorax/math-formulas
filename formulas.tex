@@ -1,5 +1,29 @@
 ﻿\section{Всякое по мелочам}
 
+\begin{tabu}[t]{||c|c|c|c|c|c|c||}
+	\hline
+		\multicolumn{7}{||c||}{Таблица степеней} \\
+	\hline
+		$a^n$ & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf 6 & \bf 7 \\
+	\hline
+		\bf 2 & 4 & 8 & 16 & 32 & 64 & 128 \\
+	\hline
+		\bf 3 & 9 & 27 & 81 & 243 & 729 & 2187 \\
+	\hline
+		\bf 4 & 16 & 64 & 256 & 1024 & 4096 & 16384 \\
+	\hline
+		\bf 5 & 25 & 125 & 625 & 3125 & 15625 & 78125 \\
+	\hline
+		\bf 6 & 36 & 216 & 1296 & 7776 & 46656 & 279936 \\
+	\hline
+		\bf 7 & 49 & 343 & 2401 & 16807 & 117649 & 823543 \\
+	\hline
+		\bf 8 & 64 & 512 & 4096 & 32768 & 262144 & 2097152 \\
+	\hline
+		\bf 9 & 81 & 729 & 6561 & 59049 & 531441 & 4782969 \\
+	\hline
+\end{tabu}
+
 $ a^2-b^2 = (a-b)(a+b) $
 
 $ a^2 + b^2 = (a + b)^2 - 2\, a\, b $
@@ -11,11 +35,6 @@ $ a^3 \pm b^3 = (a\pm b)(a^2 \mp ab + b^2) $
 $ (a \pm b)^3 = a^3\pm b^3\pm 3\, a\, b\, (a\pm b) $
 
 $ a^4 + a^2 + 1 = (a^2 - a + 1)\, (a^2 - a + 1) $
-
-\begin{center}
-	Уравнение касательной к графику функции $\displaystyle y = f(x) $ в точке $\displaystyle M_0(x_0, f(x_0)) $ имеет вид:
-	$ y = f'(x_0)\, x + (f(x_0) - f'(x_0)\, x_0) $
-\end{center}
 
 $ \sqrt{\mathstrut a\pm \sqrt{\mathstrut b}} = \sqrt{\mathstrut \frac{a + \sqrt{\mathstrut a^2 - b}}{2}}\pm \sqrt{\mathstrut \frac{a - \sqrt{\mathstrut a^2 - b}}{2}} $
 
@@ -29,6 +48,10 @@ $ \begin{aligned}
 		& x_1 \cdot x_2 = \frac{c}{a}
 	\end{aligned} \right.
 \end{aligned} $
+
+Выделение полного квадрата:
+
+$ ax^2 + bx + c = 0 \Leftrightarrow a\left(x + \frac{b}{2a} \right)^2 + \frac{4ac-b^2}{4a} = 0 $
 
 Симметричное уравнение:
 
@@ -110,6 +133,8 @@ $ (a\, b)^n = a^n\, a^m $
 
 $ \left(\frac{a}{b} \right)^n = \frac{a^n}{b^n} $
 
+$ a^{\frac{1}{n}} = \sqrt[n]{a} $
+
 %--------------------------------------------------------------------------------%
 
 \section{Свойства корня}
@@ -167,6 +192,8 @@ $ \sqrt{a} < b \Rightarrow  \left[ \begin{aligned}
 \begin{center}
 	если $ a^x = b $, то $ \log_a b = x $.
 \end{center}
+
+ОДЗ: $ \log_a b = c, a > 0, a \neq 1, b > 0. $
 
 $ \log_3 9 = 2 $
 
@@ -943,8 +970,7 @@ $ \th^2 x = \frac{\ch 2x-1}{2} $
 
 \subsection{Пределы}
 
-свойства пределов, производная внутри предела, замечательные пределы, эквивалентности(включая и факториала)
-
+свойства пределов, правило лопиталя, замечательные пределы, определение числа e и чему оно равно, эквивалентности(включая и факториала)
 
 \subsection{Дифференциирование}
 
@@ -959,6 +985,10 @@ $ (k\cdot f(x))' = k\cdot f'(x), k \in R $
 $ \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)\cdot g(x) - f(x)\cdot g'(x)}{g^2(x)} $
 
 $ (h(f(x)))' = h'(f(x)) \cdot f'(x) $
+
+$ f'(x) = \frac{df(x)}{dx} $
+
+$ df(x) = f'(x) dx $
 
 \subsubsection{Таблица производных}
 
@@ -988,6 +1018,101 @@ $ (h(f(x)))' = h'(f(x)) \cdot f'(x) $
 	\hline
 \end{tabu}
 
+\subsection{Ряды}
+
+Формула Тейлора:
+
+$\displaystyle f(x) = \sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k + \underbrace{\frac{1}{n!}\int\limits_{x_0}^x f^{(n+1)}(t)(x-t)^n dt}_{\text{интегральный остаточный член}} $
+
+\begin{tabu}[t]{||c|c|c|c||}
+	\hline
+		Функция & Формула & Первые 4 члена & \specialcell{Радиус \\ сходимости} \\
+	\hline
+		$\displaystyle e^x $ & 
+		$\displaystyle \sum_{n = 0}^{\infty} \frac{x^n}{n!} $ & 
+		$\displaystyle 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots $ & 
+		$\displaystyle \in \mathbb{R} $ \\
+	\hline
+		$\displaystyle \ln(1+x) $ & 
+		$\displaystyle \sum_{n = 1}^{\infty} (-1)^{n-1} \frac{x^{n}}{n} $ & 
+		$\displaystyle x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots $ & 
+		$\displaystyle -1 < x \leqslant 1 $ \\
+	\hline
+		$\displaystyle (1+x)^\alpha $ & 
+		$\displaystyle 1 + \sum_{n = 1}^\infty \frac{
+			\begin{aligned}
+				\alpha & (\alpha-1)\cdot \ldots \\
+				& \ldots \cdot (\alpha-(n-1))
+			\end{aligned}
+		}{n!} x^n $ & 
+		$\displaystyle \begin{aligned}
+			1 + \alpha x & + \frac{\alpha(\alpha-1)}{2!} x^2 + \\ 
+			& + \frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3 + \dots
+		\end{aligned} $ & 
+		$\displaystyle |x|<1 $ \\
+	\hline
+		$\displaystyle \frac{1}{1-x} $ & 
+		$\displaystyle 1 + \sum_{n = 1}^\infty x^n $ & 
+		$\displaystyle 1 + x + x^2 + x^3 + \dots $ & 
+		$\displaystyle |x|<1 $ \\
+	\hline
+		$\displaystyle \sin x $ & 
+		$\displaystyle \sum_{n=0}^{\infty} {(-1)^n}\frac{x^{2n+1}}{(2n+1)!} $ & 
+		$\displaystyle x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots $ & 
+		$\displaystyle x \in \mathbb{R} $ \\
+	\hline
+		$\displaystyle \cos x $ & 
+		$\displaystyle \sum_{n=0}^{\infty} {(-1)^n}\frac{x^{2n}}{(2n)!} $ & 
+		$\displaystyle 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots $ & 
+		$\displaystyle x \in \mathbb{R} $ \\
+	\hline
+		$\displaystyle \tg x $ & 
+		$\displaystyle \sum_{n=0}^{\infty} \frac{B_{2n}(-4)^n(1-4^n)}{(2n)!} x^{2n-1} $ & 
+		$\displaystyle x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + \dots $ & 
+		$\displaystyle |x| < \frac{\pi}{2} $ \\
+	\hline
+		$\displaystyle \arcsin x $ & 
+		$\displaystyle \sum^{\infty}_{n=0} \frac{(2n)!}{4^n (n!)^2 (2n+1)} x^{2n+1} $ & 
+		$\displaystyle x + \frac{x^3}{6} + \frac{3x^5}{40} + \frac{5x^7}{112} + \dots $ & 
+		$\displaystyle |x| < 1 $ \\
+	\hline
+		$\displaystyle \arctg x $ & 
+		$\displaystyle \sum^{\infty}_{n=1} \frac{(-1)^{n-1}}{2n-1} x^{2n-1} $ & 
+		$\displaystyle x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots $ & 
+		$\displaystyle  |x| < 1 $ \\
+	\hline
+		$\displaystyle \sh x $ & 
+		$\displaystyle \sum^{\infty}_{n=0} \frac{1}{(2n+1)!} x^{2n+1} $ & 
+		$\displaystyle x + \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!} + \dots $ & 
+		$\displaystyle x\in\mathbb{R} $ \\
+	\hline
+		$\displaystyle \ch x $ & 
+		$\displaystyle \sum^{\infty}_{n=0} \frac{1}{(2n)!} x^{2n} $ & 
+		$\displaystyle 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \dots $ & 
+		$\displaystyle x\in\mathbb{R} $ \\
+	\hline
+		$\displaystyle \th x $ & 
+		$\displaystyle \sum_{n=0}^{\infty} \frac{B_{2n}4^n(1-4^n)}{(2n)!} x^{2n-1} $ & 
+		$\displaystyle x - \frac{x^3}{3} + \frac{2x^5}{15} - \frac{17x^7}{315} + \dots $ & 
+		$\displaystyle |x| < \frac{\pi}{2} $ \\
+	\hline
+		$\displaystyle \operatorname{arsh} x $ & 
+		$\displaystyle \sum^{\infty}_{n=0} \frac{(-1)^n (2n)!}{4^n (n!)^2 (2n+1)} x^{2n+1} $ & 
+		$\displaystyle x - \frac{x^3}{6} + \frac{3x^5}{40} - \frac{5x^7}{112} + \dots $ & 
+		$\displaystyle |x| < 1 $ \\
+	\hline
+		$\displaystyle \operatorname{arth} x $ & 
+		$\displaystyle \sum^{\infty}_{n=0} \frac{1}{2n + 1} x^{2n+1} $ & 
+		$\displaystyle x + \frac{x^3}{3} + \frac{x^5}{5} + \frac{x^7}{7} + \dots $ & 
+		$\displaystyle |x| < 1 $ \\
+	\hline
+\end{tabu}
+
+\subsubsection{Уравнение касательной}
+
+Уравнение касательной к графику функции $\displaystyle y = f(x) $ в точке $\displaystyle M_0(x_0, f(x_0)) $ имеет вид:
+$ y = f'(x_0)\, x + (f(x_0) - f'(x_0)\, x_0) $
+
 \subsection{Интегрирование}
 
 \subsubsection{Свойства}
@@ -997,6 +1122,8 @@ $ \int 0 dx = C $
 $ \int f(x) dx = F(x) + C $
 
 $ d(\int f(x) dx) = f(x) dx $
+
+$ \left(\int f(x) dx \right) = f(x) $
 
 $ \int dx = x + C $
 
@@ -1106,31 +1233,49 @@ $ S = \int\limits_a^b (f(x)-g(x)) dx  $
 	\hline
 		N & Название & Символьная запись \\
 	\hline
-		1 & Область определения & D(y) \\
+		1 & Область определения & $ D(f) $ \\
 	\hline
-		2 & Область значений & E(y) \\
+		2 & Область значений & $ E(f) $ \\
 	\hline
-		3 & \specialcell{Четность \\ Нечетность} & \specialcell{$f(-x)=f(x)$ \\ $f(-x)=-f(x)$} \\
+		3 & \specialcell{Четность \\ Нечетность} & $ \left. 
+		\begin{aligned}
+			& f(-x)=f(x) \\ 
+			& f(-x)=-f(x)
+		\end{aligned}
+		\right\} \forall x $ \\
 	\hline
-		4 & Период функции & $f(x)=f(x+T)$ \\
+		4 & Период функции & $f(x)=f(x+T), \forall x$ \\
 	\hline
-		5 & Нули функции & $y=0$ \\
+		5 & Нули функции & $f(x) = 0, y = f(0)$ \\
 	\hline
-		6 & Функция положительная & $y>0$ \\
+		6 & \specialcell{Функция положительная \\ Функция отрицательная} & \specialcell{$f(x)>0$ \\ $f(x)<0$} \\
 	\hline
-		7 & Функция отрицательная & $y<0$ \\
+		7 & Горизонтальные асимптоты & $\displaystyle \left. \lim_{x \to \pm \infty} f(x) = a \right\} x = a $ \\
 	\hline
-		8 & Экстремумы & $y'=0$ \\
+		8 & Вертикальные асимптоты & $\displaystyle  \left. \lim_{x \to a} f(x) = \pm \infty \right\} y = a$ \\
 	\hline
-		9 & Точки максимума & $y''>0$ \\
+		9 & Наклонные асимптоты & $ \left. 
+		\begin{aligned} 
+			& k = \lim_{x \to \infty} \frac{f(x)}{x}  \\ 
+			& b = \lim_{x \to \infty} (f(x)-x) 
+		\end{aligned} 
+		\right\} y = kx + b $ \\
 	\hline
-		10 & Точки минимума & $y''<0$ \\
+		10 & Экстремумы & $f(x)'=0$ \\
 	\hline
-		11 & Возрастание функии & $y'>0$ \\
+		11 & \specialcell{Точки максимума \\ Точки минимума} & $
+		f'(x) = 0 \left\{ 
+		\begin{aligned}
+			& f''(x)>0 \\ 
+			& f(x)''<0 
+		\end{aligned}
+		\right. $ \\
 	\hline
-		12 & Убывание функции & $y'<0$ \\
+		12 & \specialcell{Возрастание \\ Убывание} & \specialcell{$f(x)'>0$ \\ $f(x)'<0$} \\
 	\hline
-		13 & График функции & --- \\
+		13 & \specialcell{Выпуклость \\ Вогнутость} & \specialcell{$ f''(x)>0 \Rightarrow \bigcap $ \\ $f''(x)<0 \Rightarrow \bigcup $ } \\
+	\hline
+		14 & График функции & $ y = f(x) $ \\
 	\hline
 \end{tabu}
 
