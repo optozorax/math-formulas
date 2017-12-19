@@ -1,8 +1,36 @@
 ﻿\section{Всякое по мелочам}
 
+\begin{tabu}[t]{||c|c|c|c|c|c|c|c|c|c|c||}
+	\hline
+		\multicolumn{11}{||c||}{Таблица степеней} \\
+	\hline
+		$a^2$ & \bf 0 & \bf 1 & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf 6 & \bf 7 & \bf 8 & \bf 9 \\
+	\hline
+		\bf 10 & 100 & 121 & 144 & 169 & 196 & 225 & 256 & 289 & 324 & 361 \\
+	\hline
+		\bf 20 & 400 & 441 & 484 & 529 & 576 & 625 & 676 & 729 & 784 & 841 \\
+	\hline
+		\bf 30 & 900 & 961 & 1024 & 1089 & 1156 & 1225 & 1296 & 1369 & 1444 & 1521 \\
+	\hline
+		\bf 40 & 1600 & 1681 & 1764 & 1849 & 1936 & 2025 & 2116 & 2209 & 2304 & 2401 \\
+	\hline
+		\bf 50 & 2500 & 2601 & 2704 & 2809 & 2916 & 3025 & 3136 & 3249 & 3364 & 3481 \\
+	\hline
+		\bf 60 & 3600 & 3721 & 3844 & 3969 & 4096 & 4225 & 4356 & 4489 & 4624 & 4761 \\
+	\hline
+		\bf 70 & 4900 & 5041 & 5184 & 5329 & 5476 & 5625 & 5776 & 5929 & 6084 & 6241 \\
+	\hline
+		\bf 80 & 6400 & 6561 & 6724 & 6889 & 7056 & 7225 & 7396 & 7569 & 7744 & 7921 \\
+	\hline
+		\bf 90 & 8100 & 8281 & 8464 & 8649 & 8836 & 9025 & 9216 & 9409 & 9604 & 9801 \\
+	\hline
+		\bf 100 & 10000 & 10201 & 10404 & 10609 & 10816 & 11025 & 11236 & 11449 & 11664 & 11881 \\
+	\hline
+\end{tabu}
+
 \begin{tabu}[t]{||c|c|c|c|c|c|c||}
 	\hline
-		\multicolumn{7}{||c||}{Таблица степеней} \\
+		\multicolumn{7}{||c||}{Таблица квадратов} \\
 	\hline
 		$a^n$ & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf 6 & \bf 7 \\
 	\hline
@@ -79,6 +107,65 @@ $ 3y^2 + 4y + 5 = 0 $
 $ (1+a)^b > 1 + ab $, при $a > 0$, $ b > 1 $.
 
 %--------------------------------------------------------------------------------%
+
+\section{НОД, НОК}
+
+$ \text{НОД}(a, b) = c $. $\text{НОД}$(наибольший общий делитель, далее $\gcd(a, b)$) от чисел $a$ и $b$ - это наибольшее возможное число $c$, такое, что $a$ и $b$ делятся на $c$ без остатка.
+
+Если образовать дробь из чисел $a$ и $b$: $\frac{a}{b}$ то, чтобы сделать дробь несократимой, необходимо их оба разделить на $ \gcd(a, b) $: $\frac{\frac{a}{\gcd(a, b)}}{\frac{b}{\gcd(a, b)}}$.
+
+$ \text{НОК}(a, b) = c $. $\text{НОК}$(наименьшее общее кратное, далее $\lcm(a, b)$) от чисел $a$ и $b$ - это наименьшее возможное число $c$, такое, что $c$ делится и на $a$ и на $b$ без остатка.
+
+При сложении дробей $\frac{a}{b} + \frac{c}{d}$ образуется одна дробь, и нижняя часть у нее - наименьшее общее кратное: $\frac{a}{b} + \frac{c}{d} = \frac{a\cdot \frac{\lcm(b, d)}{b} + c\cdot \frac{\lcm(b, d)}{d}}{\lcm(b, d)}$ 
+
+$\gcd(a, a) = a$ 
+
+$\lcm(a, a) = a$
+
+
+$\gcd(a, b) = \gcd(b, a)$
+
+$\lcm(a, b) = \lcm(b, a)$
+
+
+$\gcd(a, \gcd(b, c)) = \gcd(\gcd(a, b), c)$
+
+$\lcm(a, \lcm(b, c)) = \lcm(\lcm(a, b), c)$
+
+
+$\lcm(a, \gcd(a, b)) = a$
+
+$\gcd(a, \lcm(a, b)) = a$
+
+
+$\gcd(a, b, c) = \gcd(\gcd(a, b), c)$
+
+$\lcm(a, b, c) = \lcm(\lcm(a, b), c)$
+
+
+$\gcd(a_0, a_1, \dots, a_n) = \gcd(\gcd(a_0, a_1, \dots, a_{n-1}), a_n)$
+
+$\lcm(a_0, a_1, \dots, a_n) = \lcm(\lcm(a_0, a_1, \dots, a_{n-1}), a_n)$
+
+
+$\gcd(a, \lcm(b, c)) = \lcm(\gcd(a, b), \gcd(a, c))$
+
+$\lcm(a, \gcd(b, c)) = \gcd(\lcm(a, b), \lcm(a, c))$
+
+
+$\lcm(a, b) = \frac{|a\cdot b|}{\gcd(a, b)}$
+
+$\gcd(a, 0)=|a|, a \neq 0$
+
+$\gcd(a + m\cdot b, b) = \gcd(a, b)$
+
+$\gcd(c\cdot a, c\cdot b) = |c|\cdot\gcd(a, b)$
+
+Алгоритм Евклида:
+
+$\gcd(a, b) = \gcd(a, a \mod b), a > b$
+
+$\gcd(a, 0)=|a|, a \neq 0$
 
 \section{Модуль}
 
@@ -174,16 +261,10 @@ $ \sqrt{a} > b \Rightarrow  \left[ \begin{aligned}
 	\end{aligned} \right.
 \end{aligned} \right. $
 
-$ \sqrt{a} < b \Rightarrow  \left[ \begin{aligned}
-	& \left\{ \begin{aligned}
-		&  \\
-		& 
-	\end{aligned} \right. \\
-	& \left\{ \begin{aligned}
-		&  \\
-		& 
-	\end{aligned} \right.
-\end{aligned} \right. $
+$ \sqrt{a} < b \Rightarrow \left\{ \begin{aligned}
+		& b > 0 \\
+		& a < b^2
+	\end{aligned} \right. $
 
 %--------------------------------------------------------------------------------%
 
@@ -308,6 +389,8 @@ $ S_\infty = \frac{b_1}{1-q}, \left|q\right| < 1 $
 \section{Тригонометрия}
 
 \subsection{Графики}
+
+TODO нарисовать здесь тригонометрическую окружность, так же нарисовать для синуса, косинуса, тангенса, котангенса, периоды положительного и отрицательного функций(окружности с плюсами и минусами). Так же можно скопировать идеи с единичной окружности из картинки из папки.
 
 \begin{tikzpicture}
 
@@ -1363,7 +1446,7 @@ $A_\mathbb{e}$ - матрица $A$ в базисе $\mathbb{e}$.
 
 $c$ - некоторое число.
  
-$$ A(\boldsymbol{x}) = y $$
+$$ A(\boldsymbol{x}) = \boldsymbol{y} $$
 $$ A(\boldsymbol{x_1} + \boldsymbol{x_2}) = A(\boldsymbol{x_1}) + A(\boldsymbol{x_2}) $$
 $$ A(c\cdot\boldsymbol{x}) = c\cdot A(\boldsymbol{x}) $$
 $$ [y]_\mathbb{e} = A_\mathbb{e} \cdot [x]_\mathbb{e} $$
@@ -1388,6 +1471,7 @@ $$ B_\mathbb{a} = P_\mathbb{??}^T \cdot B_\mathbb{e} \cdot P_\mathbb{??} $$
 $$ B_\mathbb{e} = \left\lceil B(\boldsymbol{e_i},\boldsymbol{e_j})\right\rfloor_{i,j=\overline{1,n}} $$
 
 \subsection{Евклидовы пространства}
+ 
 
 \subsection{Уравнения прямых/плоскостей}
 
@@ -1592,6 +1676,10 @@ $ S = \frac{a + b}{2} h $
 
 $ S = \frac{d_1 d_2}{2} \sin \phi $
 
+Если $ \boldsymbol{AC} \bot \boldsymbol{BD} $, то $ h = \frac{a + b}{2} $; $ d_1 = d_2 $; $ \boldsymbol{AB} = \boldsymbol{CD} $
+
+Если в трапецию можно вписать окружность, то $ h = \sqrt{ab}$; $ \boldsymbol{AB} + \boldsymbol{CD} = \boldsymbol{BC} + \boldsymbol{AD} $.
+
 \subsubsection{Произвольный многоугольник}
 
 Сумма внутренних углов $n$-угольников: $ 180^{\circ}\cdot (n-2) $.
@@ -1659,11 +1747,40 @@ $ V = \frac{1}{6} \begin{vmatrix}
 	x_4 & y_4 & z_4 & 1
 \end{vmatrix} $
 
-\subsection{Куб}
+$ V = \frac13 S H $
+
+$ V^2 = \frac{1}{288}\cdot
+\begin{vmatrix}
+  0 & 1        & 1        & 1        & 1        \\
+  1 & 0        & d_{12}^2 & d_{13}^2 & d_{14}^2 \\
+  1 & d_{12}^2 & 0        & d_{23}^2 & d_{24}^2 \\
+  1 & d_{13}^2 & d_{23}^2 & 0        & d_{34}^2 \\
+  1 & d_{14}^2 & d_{24}^2 & d_{34}^2 & 0
+\end{vmatrix} $
+
+$ V = \frac16 abc \sqrt{\begin{vmatrix}
+  1 & \cos \gamma  & \cos \beta \\
+  \cos \gamma & 1 & \cos \alpha \\
+  \cos \beta & \cos \alpha & 1         
+\end{vmatrix}} $
+
+Правильный тетраэдр:
+
+$ V = \frac{\sqrt{2}}{12} a^3 $
+
+$ H = \sqrt{\frac{2}{3}} a $
+
+$ S_\text{вся} = \sqrt{3} a^2 $
+
+$ r = \frac{\sqrt{6}}{12} a $
+
+$ R = \frac{\sqrt{6}}{4} a $
 
 \subsection{Параллепипед}
 
 $ S = 2(ab + bc + ac) $
+
+$ V = abc $
 
 \subsection{Сфера}
 
@@ -1671,9 +1788,33 @@ $ S = 4 \pi R^2 $
 
 $ V = \frac{3}{4} \pi R^3 $
 
+Уравнение:
+
+$ (x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2 = R^2 $
+
+$ \boldsymbol{c} = (x_0, y_0, z_0)^T $ - центр сферы.
+
+Параметрическое задание:
+
+$\begin{cases}
+	x = x_0 + R\cdot \sin\theta \cdot \cos \varphi \\
+	y = y_0 + R\cdot \sin\theta \cdot \sin \varphi \\
+	z = z_0 + R\cdot \cos\theta
+\end{cases} $
+
+$ \theta \in [0, \pi] $, $ \varphi \in [0, 2\pi) $
+
+Векторное уравнение:
+
+$ (\boldsymbol{r} - \boldsymbol{c})\cdot (\boldsymbol{r} - \boldsymbol{c}) = R^2 $
+
+Где $\boldsymbol{r}$ - радиус-вектор. 
+
 \subsection{Цилиндр}
 
-$ S = 2 \pi R (R+H) $
+$ S_\text{бок.} = 2 \pi R H $
+
+$ S_\text{вся} = 2 \pi R (R+H) $
 
 $ V = \pi R^2 H $
 
@@ -1685,6 +1826,8 @@ $ S = \pi R (R + l) $
 
 $ V = \frac{\pi}{3} R^2 H $
 
+$ \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 0 $
+
 \subsection{Усеченый конус}
 
 $ S_{\text{боковая}} = \pi (R+r) l $
@@ -1692,5 +1835,3 @@ $ S_{\text{боковая}} = \pi (R+r) l $
 $ S = \pi l (R + l) + \pi (R^2 + r^2) $
 
 $ V = \frac{\pi}{3} H (R^2 + Rr + r^2) $
-
-\subsection{Куб}
