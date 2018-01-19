@@ -2,7 +2,7 @@
 
 \begin{tabu}[t]{||c|c|c|c|c|c|c|c|c|c|c||}
 	\hline
-		\multicolumn{11}{||c||}{Таблица степеней} \\
+		\multicolumn{11}{||c||}{Таблица квадратов} \\
 	\hline
 		$a^2$ & \bf 0 & \bf 1 & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf 6 & \bf 7 & \bf 8 & \bf 9 \\
 	\hline
@@ -30,7 +30,7 @@
 
 \begin{tabu}[t]{||c|c|c|c|c|c|c||}
 	\hline
-		\multicolumn{7}{||c||}{Таблица квадратов} \\
+		\multicolumn{7}{||c||}{Таблица степеней} \\
 	\hline
 		$a^n$ & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf 6 & \bf 7 \\
 	\hline
@@ -1055,6 +1055,8 @@ $ \th^2 x = \frac{\ch 2x-1}{2} $
 
 свойства пределов, правило лопиталя, замечательные пределы, определение числа e и чему оно равно, эквивалентности(включая и факториала)
 
+$ n! \sim \left(\frac{n}{e}\right)^n $
+
 \subsection{Дифференциирование}
 
 \subsubsection{Свойства}
@@ -1097,7 +1099,9 @@ $ df(x) = f'(x) dx $
 	\hline
 		$ \sin x $ & $ \cos x $ & $ \frac{1}{\sqrt{x}} $ &  $ -\frac{1}{2x\sqrt{x}} $ \\
 	\hline
-		$ \cos x $ & $ -\sin x $ & $ - $ &  $ - $ \\
+		$ \cos x $ & $ -\sin x $ & $ (x^n)^{(k)} $ & $ \binom nk k! x^{n-k} $ \\
+	\hline
+		 & $ \sin\left(x + \frac{\pi k}{2}\right) $ & $ \cos^{(k)}(x) $ &  $ \cos\left(x + \frac{\pi k}{2}\right) $ \\
 	\hline
 \end{tabu}
 
@@ -1190,6 +1194,8 @@ $\displaystyle f(x) = \sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k + \underbrac
 		$\displaystyle |x| < 1 $ \\
 	\hline
 \end{tabu}
+
+$\displaystyle \sum^{n}_{i=1} i = 1 + \frac12 + \frac13 + \dots + \frac{1}{n} = \gamma + \ln n + \varepsilon_n, \quad \lim_{n\to \infty} \varepsilon_n = 0, \quad \gamma \thickapprox 0.577215664 \dots $
 
 \subsubsection{Уравнение касательной}
 
@@ -1310,6 +1316,34 @@ $ y_c = \frac{1}{2S} \int\limits_a^b (f^2(x)-g^2(x)) dx $
 
 $ S = \int\limits_a^b (f(x)-g(x)) dx  $
 
+\subsubsection{Метод Остроградского}
+
+\subsubsection{Эйлеровы интегралы}
+
+$ \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt, \quad x > 0 $
+
+$ \Gamma(n) = (n-1)!, \quad n \in \mathbb{N} $
+
+$ \Gamma(x+1) = x \Gamma(x) $
+
+$ \Gamma\left(\frac12\right) = \sqrt{\pi} $
+
+$ \Gamma(x) \Gamma(1-x) = \frac{\pi}{\sin(\pi x)}, \quad x \notin \mathbb{N} $
+
+$ \Gamma\left(n + \frac12\right) = \frac{(2n-1)!!}{2^n}\sqrt{\pi}, \quad n \in \mathbb{N} $
+
+$ B(x, y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt, \quad x,y > 0 $
+
+$ B(x, y) = B(y, x) $
+
+$ B(x, y) = \frac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)} $
+
+$ \int_0^{\frac{\pi}{2}} \sin^p x \cos^q x dx = \frac12 B\left(\frac{p+1}{2}, \frac{q+1}{2}\right), \quad p, q > -1 $
+
+\subsubsection{Признаки сходимости несобственных интегралов}
+
+\subsubsection{Координаты}
+
 \subsection{Исследование функции}
 
 \begin{tabu}[t]{||c|c|c||}
@@ -1363,6 +1397,26 @@ $ S = \int\limits_a^b (f(x)-g(x)) dx  $
 \end{tabu}
 
 \subsection{Функции нескольких переменных}
+
+$ \frac{\partial u}{\partial x} = \frac{\partial u}{\partial r} \frac{\partial r}{\partial x} + \frac{\partial u}{\partial \varphi} \frac{\partial \varphi}{\partial x} $
+
+\subsection{Векторный анализ}
+
+Вектор-функция:
+
+$$ \boldsymbol{r}(t) = x(t)\boldsymbol{i} + y(t)\boldsymbol{j} + z(t)\boldsymbol{k} $$
+
+$$ \lim_{t\to t_0} \boldsymbol{r}(t) = \boldsymbol{r_0} \Leftrightarrow \lim_{t\to t_0} \left|\boldsymbol{r}(t) - \boldsymbol{r_0}\right| = 0 $$
+
+$$ \frac{d}{dt}\boldsymbol{r}(t) = \lim_{h\to 0} \frac{\boldsymbol{r}(t+h)-\boldsymbol{r}(t)}{h} = x'(t)\boldsymbol{i} + y'(t)\boldsymbol{j} + z'(t)\boldsymbol{k} $$
+
+$$ \frac{d}{dt}(\boldsymbol{r_1}(t)+\boldsymbol{r_2}(t)) = \frac{d\boldsymbol{r_1}(t)}{dt} + \frac{d\boldsymbol{r_2}(t)}{dt} $$
+
+$$ \frac{d}{dt}(f(t)\boldsymbol{r}(t)) = \frac{d f(t)}{dt}\boldsymbol{r}(t) + f(t)\frac{d\boldsymbol{r}(t)}{dt} $$
+
+$$ \frac{d}{dt}(\boldsymbol{r_1}(t)\cdot\boldsymbol{r_2}(t)) = \frac{d\boldsymbol{r_1}(t)}{dt}\cdot\boldsymbol{r_2}(t) + \boldsymbol{r_1}(t)\cdot\frac{d\boldsymbol{r_2}(t)}{dt} $$
+
+$$ \frac{d}{dt}(\boldsymbol{r_1}(t)\times\boldsymbol{r_2}(t)) = \frac{d\boldsymbol{r_1}(t)}{dt}\times\boldsymbol{r_2}(t) + \boldsymbol{r_1}(t)\times\frac{d\boldsymbol{r_2}(t)}{dt} $$
 
 %--------------------------------------------------------------------------------%
 
@@ -1468,7 +1522,16 @@ $$ B(\boldsymbol{x}, \lambda\cdot \boldsymbol{y}) =  \lambda\cdot B(\boldsymbol{
 $$ B(x, y) = B(y, x) \Leftrightarrow B_\mathbb{e} = B_\mathbb{e}^T $$
 $$ c = [x]_\mathbb{e}^T \cdot B_\mathbb{e} \cdot [y]_\mathbb{e} $$
 $$ B_\mathbb{a} = P_\mathbb{??}^T \cdot B_\mathbb{e} \cdot P_\mathbb{??} $$
-$$ B_\mathbb{e} = \left\lceil B(\boldsymbol{e_i},\boldsymbol{e_j})\right\rfloor_{i,j=\overline{1,n}} $$
+
+$$
+B_\mathbb{e} = 
+\begin{pmatrix}
+	B(\boldsymbol{e_1},\boldsymbol{e_1})& B(\boldsymbol{e_2},\boldsymbol{e_1})& \dots& B(\boldsymbol{e_n},\boldsymbol{e_1})\\
+	B(\boldsymbol{e_1},\boldsymbol{e_2})& B(\boldsymbol{e_2},\boldsymbol{e_2})& \dots& B(\boldsymbol{e_n},\boldsymbol{e_2})\\
+	\dots& \dots& \dots& \dots\\
+	B(\boldsymbol{e_1},\boldsymbol{e_n})& B(\boldsymbol{e_2},\boldsymbol{e_n})& \dots& B(\boldsymbol{e_n},\boldsymbol{e_n})
+\end{pmatrix}
+$$
 
 \subsection{Евклидовы пространства}
  
