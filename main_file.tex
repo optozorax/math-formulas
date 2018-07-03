@@ -1,20 +1,22 @@
 ﻿%\documentclass[preview]{standalone}
+%\documentclass{article}
 \documentclass{article}
+\usepackage{geometry}
+
+\geometry{
+paperwidth=25cm,
+paperheight=37cm,
+margin=0.3cm
+}
+
 \usepackage[utf8]{inputenc} 
 \usepackage[russian]{babel}
 
-\textheight=24cm % высота текста
-\textwidth=16cm % ширина текста
-\oddsidemargin=0pt % отступ от левого края
-\topmargin=-1.5cm % отступ от верхнего края
-\parindent=24pt % абзацный отступ
-\parskip=5pt % интервал между абзацами
-\tolerance=2000 % терпимость к "жидким" строкам
-\flushbottom % выравнивание высоты страниц
 \usepackage{indentfirst}
 
 \usepackage{arydshln}
 \usepackage[fleqn]{amsmath}
+\usepackage{esint}
 \usepackage{amssymb}
 \usepackage{mathbbol}
 \usepackage[T1]{fontenc}
@@ -22,6 +24,8 @@
 \usepackage{color}
 \usepackage{ulem}
 \usepackage{tabu}
+\usepackage{multirow}
+\usepackage{rotating}
 
 \usepackage[outline]{contour}
 \contourlength{1.2pt}
@@ -46,6 +50,10 @@
 	\title{Math formulae.}
 
 \DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Rot}{rot}
 
 \begin{document} \fontsize{12pt}{16pt}\selectfont
 %--------------------------------------------------------------------------------%
@@ -53,7 +61,7 @@
 
 \maketitle
 
-\tableofcontents
+%\tableofcontents
 
 \thispagestyle{empty}
 
