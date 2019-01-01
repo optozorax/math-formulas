@@ -2694,3 +2694,221 @@ $ V = \frac{\pi}{3} H (R^2 + Rr + r^2) $
 	\hline
 	\hline
 \end{tabu}
+
+\section{Теория вероятностей}
+
+\subsection{События}
+
+\subsubsection{Определение}
+
+\begin{tabu}[t]{||c|c|c|c|c||}
+	\hline
+		Название & Словесное описание & Обозначение & Частные случаи & Свойства \\
+	\hline
+		Дополнение &
+		$A$ не происходит &
+		$\displaystyle \bar{A} = \Omega \backslash A $ &
+		\specialcell{$\displaystyle A\bar{A} = \varnothing $\\
+		$\displaystyle A + \bar{A} = \Omega $\\
+		$\displaystyle \bar{\Omega} = \varnothing $\\
+		$\displaystyle \bar{\varnothing} = \Omega $} &
+		$\displaystyle \bar{\bar{A}} = A $ \\
+	\hline
+		Произведение &
+		Происходит одновременно $A$ и $B$ &
+		$\displaystyle A\bigcap B = AB $ &
+		\specialcell{$\displaystyle A\Omega = A $\\
+		$\displaystyle A\varnothing = \varnothing $} &
+		\specialcell{$\displaystyle A A = A $\\
+		$\displaystyle A B = B A $\\
+		$\displaystyle (A B) C = A (B C) $\\
+		$\displaystyle (A\bigcup B) C = AC \bigcup BC $} \\
+	\hline
+		Сумма &
+		Происходит $A$ или $B$ &
+		\specialcell{$\displaystyle A\bigcup B $\\$\displaystyle A + B, \text{если}\, AB=\varnothing $} &
+		\specialcell{$\displaystyle A\bigcup\Omega = \Omega $\\
+		$\displaystyle A\bigcup\varnothing = A $} &
+		\specialcell{$\displaystyle A\bigcup A = A $\\
+		$\displaystyle A\bigcup B = B\bigcup A $\\
+		$\displaystyle (A\bigcup B)\bigcup C = A\bigcup(B\bigcup C) $\\
+		$\displaystyle (A B)\bigcup C = (A\bigcup C)(B\bigcup C) $} \\
+	\hline
+		Разность &
+		Происходит $А$, но не происходит $B$ &
+		$\displaystyle A\backslash B $ &
+		\specialcell{$\displaystyle A\backslash A = \varnothing $\\
+		$\displaystyle A\backslash\varnothing = A $\\
+		$\displaystyle \varnothing\backslash A = \varnothing $\\
+		$\displaystyle A\backslash\Omega = \varnothing $} &
+		\specialcell{$\displaystyle A\backslash(B\bigcap C) = (A\backslash B)\bigcap(A\backslash C) $\\
+		$\displaystyle A\backslash(B\bigcup C) = (A\backslash B)\bigcup(A\backslash C) = (A\backslash B)\backslash C $\\
+		$\displaystyle (A\bigcup B)\backslash C = (A\backslash C)\bigcup(B\backslash C) $} \\
+	\hline
+		\specialcell{Симметрическая\\разность} &
+		Происходит $A$ или $B$, но не $AB$ &
+		$\displaystyle \begin{aligned}
+			A\triangle B &= (A\backslash B) \bigcap (B\backslash A) \\
+			&= A\bar{B} + \bar{A}B
+		\end{aligned} $ &
+		\specialcell{$\displaystyle A\triangle\varnothing = A $\\
+		$\displaystyle A\triangle A = \varnothing $} &
+		\specialcell{$\displaystyle A\triangle B = B\triangle A $\\
+		$\displaystyle (A\triangle B)\triangle C = A\triangle (B\triangle C) $\\
+		$\displaystyle A\bigcap (B\triangle C) = (A\bigcap B)\triangle (A\bigcap C) $} \\
+	\hline
+\end{tabu}
+
+\subsubsection{Свойства}
+
+\begin{tabu}{||c|c|c|c|c||}
+	\hline
+		Название & Словесное описание & Частные случаи & Свойства \\
+	\hline
+		\specialcell{Дополнение\\$\displaystyle \bar{A} $} &
+		$A$ не происходит &
+		\specialcell{$\displaystyle A\bar{A} = \varnothing $\\
+		$\displaystyle A + \bar{A} = \Omega $\\
+		$\displaystyle \bar{\Omega} = \varnothing $\\
+		$\displaystyle \bar{\varnothing} = \Omega $} &
+		\specialcell{$\displaystyle \bar{A} = \Omega \backslash A $\\
+		$\displaystyle \bar{\bar{A}} = A $} \\
+	\hline
+		\specialcell{Произведение\\$\displaystyle A\cap B $, $\displaystyle AB $} &
+		\specialcell{Происходит\\одновременно $A$ и $B$} &
+		\specialcell{$\displaystyle A\Omega = A $\\
+		$\displaystyle A\varnothing = \varnothing $} &
+		\specialcell{$\displaystyle A A = A $\\
+		$\displaystyle A B = B A $\\
+		$\displaystyle (A B) C = A (B C) $\\
+		$\displaystyle (A\cup B) C = AC \cup BC $} \\
+	\hline
+		\specialcell{Сумма\\$\displaystyle A\cup B $\\$\displaystyle A + B, \text{если}\, AB=\varnothing $} &
+		Происходит $A$ или $B$ &
+		\specialcell{$\displaystyle A\cup\Omega = \Omega $\\
+		$\displaystyle A\cup\varnothing = A $} &
+		\specialcell{$\displaystyle A\cup A = A $\\
+		$\displaystyle A\cup B = B\cup A $\\
+		$\displaystyle (A\cup B)\cup C = A\cup(B\cup C) $\\
+		$\displaystyle (A B)\cup C = (A\cup C)(B\cup C) $} \\
+	\hline
+		\specialcell{Разность\\$\displaystyle A\backslash B $} &
+		\specialcell{Происходит $A$, но\\не происходит $B$} &
+		\specialcell{$\displaystyle A\backslash A = \varnothing $\\
+		$\displaystyle A\backslash\varnothing = A $\\
+		$\displaystyle \varnothing\backslash A = \varnothing $\\
+		$\displaystyle A\backslash\Omega = \varnothing $} &
+		\specialcell{$\displaystyle A\backslash(B\cap C) = (A\backslash B)\cap(A\backslash C) $\\
+		$\displaystyle A\backslash(B\cup C) = (A\backslash B)\cup(A\backslash C) = (A\backslash B)\backslash C $\\
+		$\displaystyle (A\cup B)\backslash C = (A\backslash C)\cup(B\backslash C) $} \\
+	\hline
+		\specialcell{Симметрическая\\разность\\$\displaystyle A\triangle B $} &
+		\specialcell{Происходит $A$ или\\$B$, но не $AB$} &
+		\specialcell{$\displaystyle A\triangle\varnothing = A $\\
+		$\displaystyle A\triangle A = \varnothing $} &
+		\specialcell{$\displaystyle A\triangle B = (A\backslash B) \cap (B\backslash A) = A\bar{B} + \bar{A}B $\\
+		$\displaystyle A\triangle B = B\triangle A $\\
+		$\displaystyle (A\triangle B)\triangle C = A\triangle (B\triangle C) $\\
+		$\displaystyle A\cap (B\triangle C) = (A\cap B)\triangle (A\cap C) $} \\
+	\hline
+\end{tabu}
+
+\subsection{Вероятность}
+
+\subsubsection{Классическая вероятность}
+
+$m$ --- число элементарных событий.
+
+$n$ --- число всех событий.
+
+$\displaystyle \Prob(A) = \frac{m}{n} $
+
+$\displaystyle \Prob(\varnothing) = 0 $
+
+$\displaystyle \Prob(\Omega) = 1 $
+
+$\displaystyle 0 \leqslant \Prob(A) \leqslant 1 $
+
+$\displaystyle \Prob(A) = 1 - \Prob(\bar{A}) $
+
+Геометрическая вероятность:
+
+$\displaystyle \Prob(A) = \frac{\mu(A)}{\mu(\Omega)} $, где $\mu(A)$ --- мера множества $A$.
+
+\subsubsection{Аксиомы}
+
+$\displaystyle \Prob(A) \geqslant 0,\ \forall A \in F $
+
+$\displaystyle \Prob(\Omega) = 1 $
+
+$\displaystyle \Prob\left(\sum_k A_k\right) = \sum_k \Prob(A_k) $, если $\displaystyle A_i A_j = \varnothing,\ \forall i \neq j $
+
+\subsubsection{Свойства}
+
+$\displaystyle \Prob(\varnothing) = 0 $
+
+$\displaystyle \Prob(\bar{A}) = 1 - \Prob(A) $
+
+$\displaystyle \Prob(A\backslash B) = \Prob(A) - \Prob(B) $
+
+$\displaystyle A \subset B \Rightarrow \Prob(A) \leqslant \Prob(B) $
+
+$\displaystyle 0 \leqslant \Prob(A) \leqslant 1 $
+
+$\displaystyle \Prob(A\cup B) = \Prob(A) + \Prob(B) - \Prob(AB) $
+
+$\displaystyle \Prob(A\cup B) \leqslant \Prob(A) + \Prob(B) $
+
+$\displaystyle \Prob\left(\bigcup_{k=1}^{n} A_k\right) = \sum_{k=1}^{n}\Prob(A_k) - \sum_{i\neq j} \Prob(A_i A_j) + \dots + (-1)^{n-1} \Prob(A_1 A_2 \dots A_n) $
+
+$\displaystyle \Prob\left(\bigcup_i A_i\right) \leqslant \sum_i \Prob(A_i) $
+
+\*Аксиома непрерывности, но я не хочу её писать.\*
+
+\subsubsection{Относительная вероятность}
+
+$\displaystyle \Prob(A|B) = \frac{\Prob(AB)}{\Prob(B)} $
+
+$\displaystyle \Prob(AB) = \Prob(A) \Prob(B|A) = \Prob(B) \Prob(A|B) $
+
+$\displaystyle \Prob(ABC) = \Prob(A) \Prob(B|A) \Prob(C|BA) $
+
+$\displaystyle \Prob(A|A) = 1 $
+
+$\displaystyle 0 \leqslant \Prob(A|B) \leqslant 1 $
+
+$\displaystyle \Prob(\Omega|B) = 1 $
+
+Если $\displaystyle A = \sum_{i} A_i,\ A_i A_j = \varnothing $, то $\displaystyle \Prob\left.\left(\sum_k A_k\right|B\right) = \sum_k \Prob(A_k|B) $
+
+События $A$ и $B$ независимы друг от друга, если $\Prob(A|B) = \Prob(A)$ или $\Prob(AB) = \Prob(A)\Prob(B)$.
+
+\subsubsection{Формула полной вероятности}
+
+$\displaystyle \Omega = \bigcup_{k=1}^n H_k,\ H_i H_j = \varnothing,\ \forall i \neq j $
+
+$\displaystyle \Prob(A) = \sum_{k=1}^{n} \Prob(H_k) \Prob(A|H_k) $
+
+Формула Байеса:
+
+$\displaystyle \Prob(H_k|A) = \frac{\Prob(H_k)\Prob(A|H_k)}{\Prob(A)} $
+
+\subsubsection{Схема бернулли}
+
+Вероятность наступления $m$ успехов в серии из $n$ независимых одинаковых испытаний, где вероятность успеха в одном испытании равна $p$:
+
+$\displaystyle \Prob(n,\ m) = C_n^m p^m (1-p)^{n-m} $
+
+\subsubsection{Урновая схема}
+
+Я не буду приводить её здесь, потому что некоторые задачи, которые решались с её помощью, были решены неправильно, и вообще я её не очень понимаю. По крайней мере из методички брать не буду.
+
+\subsubsection{Частный случай с выбором шаров}
+
+Имеется урна с белыми и черными шарами. Всего шаров $N$, белых $M$. Из урны достают $n$ шаров. Найти вероятность, что среди них $m$ белых.
+
+$\displaystyle \Prob(A) = \frac{C_M^m C_{N-M}^{n-m}}{C_N^n} $
+
+\subsection{Функции распределения}
+
+\section{Математическая статистика}
