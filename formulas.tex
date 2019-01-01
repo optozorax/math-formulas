@@ -2897,9 +2897,9 @@ $\displaystyle \Prob(H_k|A) = \frac{\Prob(H_k)\Prob(A|H_k)}{\Prob(A)} $
 
 Вероятность наступления $m$ успехов в серии из $n$ независимых одинаковых испытаний, где вероятность успеха в одном испытании равна $p$:
 
-$\displaystyle \Prob(n,\ m) = C_n^m p^m (1-p)^{n-m} $
+$\displaystyle \Prob(n,\ m) = C_n^m p^m q^{n-m} $
 
-$\displaystyle \Prob\{m_1 \leqslant m \leqslant m_2\} = \sum_{m=m_1}^{m_2} C_n^m p^m (1-p)^{n-m} $
+$\displaystyle \Prob\{m_1 \leqslant m \leqslant m_2\} = \sum_{m=m_1}^{m_2} C_n^m p^m q^{n-m} $
 
 Приближенное вычисление:
 
@@ -2913,7 +2913,7 @@ $\displaystyle \Prob(n,\ m) \approx \frac{\lambda^m}{m!}e^{-\lambda} $
 
 Если $n$ велико, то $q = 1 - p$ и
 
-$\displaystyle \Prob(n,\ m) \approx \frac{1}{\sqrt{npq}}\phi\left(\frac{m-np}{\sqrt{npq}}\right) $, где $\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$.
+$\displaystyle \Prob(n,\ m) \approx \frac{1}{\sqrt{npq}}\varphi\left(\frac{m-np}{\sqrt{npq}}\right) $, где $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$.
 
 Интегральная теорема Муавра-Лапласа:
 
@@ -2935,14 +2935,105 @@ $\Phi(\infty) = 1$
 
 $\displaystyle \Prob(A) = \frac{C_M^m C_{N-M}^{n-m}}{C_N^n} $
 
+\newcommand{\M}{\mathsf{M}}
+\newcommand{\D}{\mathsf{D}}
+%\newcommand{\P}{\Prob}
+\newcommand{\cov}{\mathrm{cov}}
+
 \subsection{Распределение}
 
 \subsubsection{Функция распределения}
+
+$\displaystyle F_\xi(x) = \Prob\{\xi < x\},\ x\in\mathbb{R} $
+
+$\displaystyle 0 \leqslant F(x) \leqslant 1 $
+
+Если $x_2 > x_1 $, то $F(x_2)\geqslant F(x_1)$.
+
+$F(-\infty) = 0 $, $F(\infty) = 1$
+
+$\displaystyle F(x) $ непрерывна слева.
+
+$\displaystyle \Prob\{\xi \leqslant x\} = F(x + 0) $
+
+$\displaystyle \Prob\{\xi = x\} = F(x+0) - F(x) $
+
+$\displaystyle \Prob\{x_1 \leqslant \xi < x_2\} = F(x_2) - F(x_1) $
+
+$\displaystyle \Prob\{x_1 \leqslant \xi \leqslant x_2\} = F(x_2+0) - F(x_1) $
+
+$\displaystyle \Prob\{x_1 < \xi < x_2\} = F(x_2) - F(x_1+0) $
+
+$\displaystyle \Prob\{x_1 < \xi \leqslant x_2\} = F(x_2+0) - F(x_1+0) $
+
 \subsubsection{Дискретная случайная величина}
+
+$\Prob\{\xi = x_k\} = p_k $, $p_k > 0$, $k \in \mathbb{D}$, $\mathbb{D} \subseteq \mathbb{N}$
+
+$\displaystyle F(x) = \sum_{\{ k | x_k < x\}} p_k $
+
 \subsubsection{Плотность распределения}
+
+$\displaystyle f(x) \geqslant 0 $
+
+$\displaystyle \int\limits_{-\infty}^{\infty} f(x) dx = 1 $
+
+$\displaystyle \int\limits_{a}^{b} f(x) dx = \Prob\{a\leqslant \xi \leqslant b\} $
+
+$\displaystyle f(x) = \lim_{\Delta x\to 0} \frac{\Prob\{x\leqslant \xi < x + \Delta x\}}{\Delta x} $
+
+$\displaystyle F(x) = \int\limits_{-\infty}^{x} f(t) dt $
+
 \subsubsection{Математическое ожидание}
+
+$\displaystyle \M C = C $
+
+$\displaystyle \M C\xi = C \M \xi $
+
+$\displaystyle \M(\xi + \eta) = \M\xi + \M\eta $
+
+$\displaystyle \M(\xi\cdot\eta) = \M\xi \cdot \M\eta $, если $\xi$ и $\eta$ независимы.
+
+Если $\displaystyle \Prob\{a\leqslant \xi \leqslant b\} = 1 $, то $a\leqslant \M\xi \leqslant b$
+
+$\displaystyle |\M\xi| \leqslant \M|\xi| $
+
+$\displaystyle |\M(\xi\cdot\eta)| \leqslant \sqrt{\M\xi^2\cdot\M\eta^2} $
+
+Если случайная величина дискретна:
+
+$\displaystyle \M\xi = \sum_k x_k p_k $
+
+$\displaystyle \M\varphi(\xi) = \sum_k \varphi(x_k) p_k $
+
+Если случайная величина непрерывна:
+
+$\displaystyle \M\xi = \int\limits_{-\infty}^{\infty} x\cdot f_\xi(x) dx $
+
+$\displaystyle \M\varphi(\xi) = \int\limits_{-\infty}^{\infty} \varphi(x)\cdot f_\xi(x) dx $
+
 \subsubsection{Моменты}
 \subsubsection{Дисперсия}
+
+$\displaystyle \D C = 0 $
+
+$\displaystyle \D(C\xi) = C^2\D\xi $
+
+$\displaystyle \D(\xi+\eta) = \D\xi + \D\eta $, если $\xi$ и $\eta$ независимы.
+
+$\displaystyle \D\xi = \M\xi^2 - (\M\xi)^2 $
+
+$\displaystyle \D(\xi\cdot\eta) = \D\xi + \D\eta + 2\cov(\xi,\ \eta) $
+
+Если случайная величина дискретна:
+
+$\displaystyle \D\xi = \sum_k (x_k - \M\xi)^2 p_k $
+
+Если случайная величина непрерывна:
+
+$\displaystyle \D\xi = \int\limits_{-\infty}^{\infty} (x-\M\xi)^2\cdot f_\xi(x) dx $
+
+
 \subsubsection{Характеристическая функция}
 \subsubsection{Производящая функция}
 \subsubsection{Преобразование случайных величин}
@@ -2961,11 +3052,62 @@ $\displaystyle \Prob(A) = \frac{C_M^m C_{N-M}^{n-m}}{C_N^n} $
 
 \subsection{Типы распределений}
 
-\subsubsection{Биномиальное}
-\subsubsection{Пуассона}
-\subsubsection{Геометрическое}
-\subsubsection{Равномерное}
-\subsubsection{Показательное}
-\subsubsection{Нормальное}
+\begin{tabu}{|c|c|c|c|c|c|}
+	\hline
+		Название&Обозначение&Плотность&$\M\xi$&$\D\xi$&Условия \\
+	\hline
+		Биномиальное&
+		$\mathrm{Bin}(n,\ p)$&
+		$p_k = C_n^k p^k q^{n-k}$&
+		$np$&
+		$npq$&
+		$k=\overline{0, n}$ \\
+	\hline
+		Пуассона&
+		$\mathrm{Po}(\lambda)$&
+		$p_k = \sfrac{\lambda^k}{k!}$&
+		$\lambda$&
+		$\lambda$&
+		$k\in \mathbb{N}$ \\
+	\hline
+		Геометрическое&
+		$\mathrm{G}(p)$&
+		$p_k = q^k p$&
+		$\sfrac{q}{p}$&
+		$\sfrac{q}{p^2}$&
+		$k\in \mathbb{N}$ \\
+	\hline
+		Равномерное&
+		$\mathrm{Rav}[a,\ b]$&
+		\scalebox{0.8}{$f(x) = \left\{
+		\begin{aligned}
+			&\sfrac{1}{(b-a)}, &&a \leqslant x \leqslant b \\
+			&0, &&\text{otherwise}
+		\end{aligned}
+		\right.$}&
+		$\sfrac{(a+b)}{2}$&
+		$\sfrac{(b-a)^2}{12}$&
+		$a \geqslant b$ \\
+	\hline
+		Экспоненциальное&
+		$\mathrm{Exp}(\lambda)$&
+		\scalebox{0.8}{$f(x) = \left\{
+		\begin{aligned}
+			&\lambda e^{-\lambda x}, &&x \geqslant 0 \\
+			&0, && x \leqslant 0
+		\end{aligned}
+		\right.$}&
+		$\sfrac{1}{\lambda}$&
+		$\sfrac{1}{\lambda^2}$&
+		$\lambda > 0$ \\
+	\hline
+		Нормальное&
+		$\mathrm{N}(m,\ \sigma)$&
+		\scalebox{0.8}{$f(x) = \frac{\exp\left\{\frac{-(x-m)^2}{2\sigma^2}\right\}}{\sigma\sqrt{2\pi}}$}&
+		$m$&
+		$\sigma^2$&
+		$\sigma > 0$ \\
+	\hline
+\end{tabu}
 
 \section{Математическая статистика}
