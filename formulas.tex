@@ -2899,6 +2899,32 @@ $\displaystyle \Prob(H_k|A) = \frac{\Prob(H_k)\Prob(A|H_k)}{\Prob(A)} $
 
 $\displaystyle \Prob(n,\ m) = C_n^m p^m (1-p)^{n-m} $
 
+$\displaystyle \Prob\{m_1 \leqslant m \leqslant m_2\} = \sum_{m=m_1}^{m_2} C_n^m p^m (1-p)^{n-m} $
+
+Приближенное вычисление:
+
+Формула Пуассона:
+
+Если $p$ и $pn$ малы, то $\lambda = pn$ и 
+
+$\displaystyle \Prob(n,\ m) \approx \frac{\lambda^m}{m!}e^{-\lambda} $ 
+
+Формула Муавра-Лапласа:
+
+Если $n$ велико, то $q = 1 - p$ и
+
+$\displaystyle \Prob(n,\ m) \approx \frac{1}{\sqrt{npq}}\phi\left(\frac{m-np}{\sqrt{npq}}\right) $, где $\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$.
+
+Интегральная теорема Муавра-Лапласа:
+
+Если $n$ велико, то $q = 1 - p$ и
+
+$\displaystyle \Prob(m_1 \leqslant m \leqslant m_2) \approx \Phi\left(\frac{m_1 - np}{\sqrt{npq}}\right) - \Phi\left(\frac{m_2 - np}{\sqrt{npq}}\right) $, где $\Phi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} e^{-\frac{y^2}{2} dy} $.
+
+$\Phi(-x) = 1 - \Phi(x)$
+
+$\Phi(\infty) = 1$
+
 \subsubsection{Урновая схема}
 
 Я не буду приводить её здесь, потому что некоторые задачи, которые решались с её помощью, были решены неправильно, и вообще я её не очень понимаю. По крайней мере из методички брать не буду.
@@ -2909,6 +2935,37 @@ $\displaystyle \Prob(n,\ m) = C_n^m p^m (1-p)^{n-m} $
 
 $\displaystyle \Prob(A) = \frac{C_M^m C_{N-M}^{n-m}}{C_N^n} $
 
-\subsection{Функции распределения}
+\subsection{Распределение}
+
+\subsubsection{Функция распределения}
+\subsubsection{Дискретная случайная величина}
+\subsubsection{Плотность распределения}
+\subsubsection{Математическое ожидание}
+\subsubsection{Моменты}
+\subsubsection{Дисперсия}
+\subsubsection{Характеристическая функция}
+\subsubsection{Производящая функция}
+\subsubsection{Преобразование случайных величин}
+
+\subsection{Многомерное распределение}
+
+\subsubsection{Функция распределения}
+\subsubsection{Дискретная случайная величина}
+\subsubsection{Плотность распределения}
+\subsubsection{Математическое ожидание}
+\subsubsection{Моменты}
+\subsubsection{Дисперсия}
+\subsubsection{Характеристическая функция}
+\subsubsection{Производящая функция}
+\subsubsection{Преобразование случайных величин}
+
+\subsection{Типы распределений}
+
+\subsubsection{Биномиальное}
+\subsubsection{Пуассона}
+\subsubsection{Геометрическое}
+\subsubsection{Равномерное}
+\subsubsection{Показательное}
+\subsubsection{Нормальное}
 
 \section{Математическая статистика}
