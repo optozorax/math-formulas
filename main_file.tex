@@ -12,10 +12,25 @@ margin=0.3cm
 \usepackage[utf8]{inputenc} 
 \usepackage[russian]{babel}
 
+\usepackage{fontspec}
+\setmainfont[
+	Ligatures=TeX,
+	Extension=.otf,
+	BoldFont=cmunbx,
+	ItalicFont=cmunti,
+	BoldItalicFont=cmunbi,
+]{cmunrm}
+\setsansfont{Source Sans Pro}
+\setmonofont{Consolas}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
 \usepackage{indentfirst}
 
 \usepackage{arydshln}
 \usepackage[fleqn]{amsmath}
+\usepackage{xfrac}
 \usepackage{esint}
 \usepackage{amssymb}
 \usepackage{mathbbol}
