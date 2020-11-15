@@ -1,3 +1,5 @@
+# [Скачать](https://github.com/optozorax/math-formulas/releases/download/1.0/main_file.pdf)
+
 # Описание
 
 Это - сборник формул и  по математике и смежным дисциплинам. Он написан в формате `.tex`, но его можно скомпилировать в `.pdf` файл, либо из этого файла составить картинку, которую можно распечатать и заламинировать.
@@ -111,26 +113,24 @@
 * Формулы и свойства стандартных распределений
 
 ## Самые сочные части в картинках:
-<center>
 
-![](img/log.png)
+![](/img/log.png)
 
-![](img/comb.png)
+![](/img/comb.png)
 
-![](img/trig_img.png)
+![](/img/trig_img.png)
 
-![](img/trig_sum.png)
+![](/img/trig_sum.png)
 
-![](img/trig_o_angle.png)
+![](/img/trig_o_angle.png)
 
-![](img/taylor.png)
+![](/img/taylor.png)
 
-![](img/euler.png)
+![](/img/euler.png)
 
-![](img/gamma.png)
+![](/img/gamma.png)
 
-![](img/prob_table.png)
-</center>
+![](/img/prob_table.png)
 
 # Собрать все формулы на один листочек
 
@@ -138,9 +138,9 @@
 
 Хотелось бы делать по аналогии с этим сборником формул:
 
-![](img/1.png)
+![](/img/1.png)
 
-![](img/2.png)
+![](/img/2.png)
 
 Создал его тоже я (сканируя просто книги и написанные вручную формулы). Кстати, можете распечатать это, в школе эти картинки пользовались популярностью.
 
